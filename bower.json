@@ -1,17 +1,17 @@
 {
-  "name": "flat-admin-bootstrap-templates",
+  "name": "jobstat",
   "dependencies": {
     "jquery": "latest",
     "bootstrap": "latest",
     "font-awesome": "latest",
     "datatables": "latest",
-    "Chart.js": "latest",
+    "Chart.js": "1.1.1",
     "bootstrap-switch": "latest",
     "matchHeight": "latest",
     "select2": "latest",
     "animate.css": "latest",
-    "ace-builds": "~1.2.2",
-    "checkbox3": "~0.1.1"
+    "checkbox3": "~0.1.1",
+    "bootstrap-social": "latest"
   },
   "private": true,
   "overrides": {
@@ -57,13 +57,6 @@
         "media/js/dataTables.bootstrap.min.js"
       ]
     },
-    "ace-builds": {
-      "main": [
-        "src/ace.js",
-        "src/mode-html.js",
-        "src/theme-github.js"
-      ]
-    },
     "Chart.js": {
       "main": [
         "Chart.min.js"
@@ -73,6 +66,11 @@
       "main": [
         "dist/js/select2.full.min.js",
         "dist/css/select2.min.css"
+      ]
+    },
+    "bootstrap-social": {
+      "main": [
+        "bootstrap-social.css"
       ]
     }
   }
