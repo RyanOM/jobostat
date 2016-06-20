@@ -15,3 +15,4 @@ cd jobstat
 Baixar dependencias
 npm install --save-dev gulp
 bower install
+gulp dev
