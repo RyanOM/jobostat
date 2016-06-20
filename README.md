@@ -10,7 +10,7 @@ Baixar repositorio:
 git clone .....
 
 
-cd jobostat
+cd jobStat
 
 Baixar dependencias
 bower install
