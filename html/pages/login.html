@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Flat Admin V.2 - Free Bootstrap Admin Templates</title>
+    <title>JobStat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
@@ -13,9 +13,10 @@
     <link rel="stylesheet" type="text/css" href="../../bower_components/animate.css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/checkbox3/dist/checkbox3.min.css">
-    <link rel="stylesheet" type="text/css" href="../../bower_components/DataTables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/datatables/media/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/datatables/media/css/dataTables.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-social/bootstrap-social.css">
     <!-- CSS App -->
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <link rel="stylesheet" type="text/css" href="../../css/themes/flat-blue.css">
@@ -27,8 +28,10 @@
             <div>
                 <div class="login-form row">
                     <div class="col-sm-12 text-center login-header">
-                        <i class="login-logo fa fa-connectdevelop fa-5x"></i>
-                        <h4 class="login-title">Flat Admin V2</h4>
+                        <a href="home.html" style="color: white">
+                            <i class="login-logo fa fa-line-chart fa-5x"></i>
+                            <h4 class="login-title">JobStat</h4>
+                        </a>
                     </div>
                     <div class="col-sm-12">
                         <div class="login-body">
@@ -37,12 +40,12 @@
                                     Log In...
                                 </div>
                             </div>
-                            <form>
+                            <form action="dashboard.html">
                                 <div class="control">
-                                    <input type="text" class="form-control" value="admin@gmail.com" />
+                                    <input type="text" class="form-control" placeholder="Email" required/>
                                 </div>
                                 <div class="control">
-                                    <input type="password" class="form-control" value="123456" />
+                                    <input type="password" class="form-control" placeholder="Senha" required/>
                                 </div>
                                 <div class="login-button text-center">
                                     <input type="submit" class="btn btn-primary" value="Login">
@@ -52,6 +55,18 @@
                         <div class="login-footer">
                             <span class="text-right"><a href="#" class="color-white">Forgot password?</a></span>
                         </div>
+                        <br>
+                        <div class="text-center color-white">
+                            Ou
+                            <a class="btn btn-block btn-social btn-linkedin color-white">
+                                <span class="fa fa-linkedin"></span>
+                                Login com Linkedin
+                            </a>
+                            <a class="btn btn-block btn-social btn-google color-white">
+                                <span class="fa fa-google"></span>
+                                Login com Google
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,16 +75,12 @@
     <!-- Javascript Libs -->
     <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/Chart.js/Chart.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/Chart.js/dist/Chart.min.js"></script>
     <script type="text/javascript" src="../../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
-    
     <script type="text/javascript" src="../../bower_components/matchHeight/jquery.matchHeight-min.js"></script>
-    <script type="text/javascript" src="../../bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/DataTables/media/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/datatables/media/js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript" src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/ace-builds/src/ace.js"></script>
-    <script type="text/javascript" src="../../bower_components/ace-builds/src/mode-html.js"></script>
-    <script type="text/javascript" src="../../bower_components/ace-builds/src/theme-github.js"></script>
     <!-- Javascript -->
     <script type="text/javascript" src="../../js/app.js"></script>
 </body>

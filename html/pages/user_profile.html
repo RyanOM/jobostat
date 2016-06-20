@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JobStat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/checkbox3/dist/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/datatables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/datatables/media/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../bower_components/select2/dist/css/select2.min.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/themes/flat-blue.css">
+</head>
+
+<body class="flat-blue">
+<div class="app-container">
+    <div class="row content-container">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-expand-toggle">
+                        <i class="fa fa-bars icon"></i>
+                    </button>
+                    <ol class="breadcrumb navbar-breadcrumb">
+                        <li>Meu Perfil</li>
+                        <li class="active">Bob Jones</li>
+                    </ol>
+                    <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                        <i class="fa fa-th icon"></i>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                        <i class="fa fa-times icon"></i>
+                    </button>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-comments-o"></i></a>
+                        <ul class="dropdown-menu animated fadeInDown">
+                            <li class="title">
+                                Notification <span class="badge pull-right">0</span>
+                            </li>
+                            <li class="message">
+                                No new notification
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown danger">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-star-half-o"></i> 4</a>
+                        <ul class="dropdown-menu danger  animated fadeInDown">
+                            <li class="title">
+                                Notification <span class="badge pull-right">4</span>
+                            </li>
+                            <li>
+                                <ul class="list-group notifications">
+                                    <a href="#">
+                                        <li class="list-group-item">
+                                            <span class="badge">1</span> <i class="fa fa-exclamation-circle icon"></i> new registration
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item">
+                                            <span class="badge success">1</span> <i class="fa fa-check icon"></i> new orders
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item">
+                                            <span class="badge danger">2</span> <i class="fa fa-comments icon"></i> customers messages
+                                        </li>
+                                    </a>
+                                    <a href="#">
+                                        <li class="list-group-item message">
+                                            view all
+                                        </li>
+                                    </a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown profile">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bob Jones <span class="caret"></span></a>
+                        <ul class="dropdown-menu animated fadeInDown">
+                            <li class="profile-img">
+                                <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                            </li>
+                            <li>
+                                <div class="profile-info">
+                                    <h4 class="username">Bob Jones</h4>
+                                    <p>bob_jones@email.com</p>
+                                    <div class="btn-group margin-bottom-2x" role="group">
+                                        <button type="button" class="btn btn-default"><a href="user_profile.html"><i class="fa fa-user"></i> Perfil</a></button>
+                                        <button type="button" class="btn btn-default"><a href="home.html"><i class="fa fa-sign-out"></i> Logout</a></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="side-menu sidebar-inverse">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="side-menu-container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="home.html">
+                            <div class="icon fa fa-line-chart"></div>
+                            <div class="title">JobStat</div>
+                        </a>
+                        <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-times icon"></i>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon fa fa-tachometer"></span><span class="title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="active panel panel-default dropdown">
+                            <a data-toggle="collapse" href="#dropdown-element">
+                                <span class="icon fa fa-desktop"></span><span class="title">UI Kits</span>
+                            </a>
+                            <!-- Dropdown level 1 -->
+                            <div id="dropdown-element" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="grid.html">Grid</a></li>
+                                        <li><a href="button.html">Buttons</a></li>
+                                        <li><a href="card.html">Cards</a></li>
+                                        <li><a href="list.html">Lists</a></li>
+                                        <li><a href="modal.html">Modals</a></li>
+                                        <li><a href="alert.html">Alerts & Toasts</a></li>
+                                        <li><a href="panel.html">Panels</a></li>
+                                        <li><a href="loader.html">Loaders</a></li>
+                                        <li><a href="step.html">Tabs & Steps</a></li>
+                                        <li><a href="other.html">Other</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="panel panel-default dropdown">
+                            <a data-toggle="collapse" href="#dropdown-table">
+                                <span class="icon fa fa-table"></span><span class="title">Table</span>
+                            </a>
+                            <!-- Dropdown level 1 -->
+                            <div id="dropdown-table" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="table.html">Table</a>
+                                        </li>
+                                        <li><a href="datatable.html">Datatable</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="panel panel-default dropdown">
+                            <a data-toggle="collapse" href="#dropdown-form">
+                                <span class="icon fa fa-file-text-o"></span><span class="title">Form</span>
+                            </a>
+                            <!-- Dropdown level 1 -->
+                            <div id="dropdown-form" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="ui-kits.html">Form UI Kits</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Dropdown-->
+                        <li class="panel panel-default dropdown">
+                            <a data-toggle="collapse" href="#component-example">
+                                <span class="icon fa fa-cubes"></span><span class="title">Components</span>
+                            </a>
+                            <!-- Dropdown level 1 -->
+                            <div id="component-example" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="pricing-table.html">Pricing Table</a>
+                                        </li>
+                                        <li><a href="chartjs.html">Chart.JS</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="user_profile.html">
+                                <span class="icon fa fa fa-user"></span><span class="title">Meu Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home.html">
+                                <span class="icon fa fa fa-sign-out"></span><span class="title">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <div class="side-body">
+                <div class="page-title">
+                    <span class="title">Meu Perfil</span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="card">
+                            <div class="card-header">
+
+                                <div class="card-title">
+                                    <div class="title">Editar meu perfil</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <!-- left column -->
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="avatar" alt="avatar" style="max-height: 300px;overflow: hidden;">
+                                                <h6>Mudar foto de perfil</h6>
+
+                                                <input type="file" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <!-- edit form column -->
+                                        <div class="col-md-9 personal-info">
+                                            <div class="alert alert-success alert-dismissable">
+                                                <a class="panel-close close" data-dismiss="alert">×</a>
+                                                <i class="fa fa-check"></i>
+                                                Suas alterações foram salvas com sucesso.
+                                            </div>
+                                            <div class="alert alert-danger alert-dismissable">
+                                                <a class="panel-close close" data-dismiss="alert">×</a>
+                                                <i class="fa fa-times"></i>
+                                                Erros foram encontrados. Por favor, corrigi-los.
+                                            </div>
+                                            <h3>Meus dados pessoais</h3>
+
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Nome:</label>
+                                                    <div class="col-lg-8">
+                                                        <input class="form-control" type="text" value="Bob">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Sobrenome:</label>
+                                                    <div class="col-lg-8">
+                                                        <input class="form-control" type="text" value="Jones">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Email:</label>
+                                                    <div class="col-lg-8">
+                                                        <input class="form-control" type="text" value="bob_jones@email.com">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Linkedin:</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="text" value="http://linkedin.com/bobjones">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Senha:</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="password" value="11111122333">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Repetir Senha:</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="password" value="11111122333">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="sub-title col-md-offset-3 col-md-8">Aceito receber  nosso newsletter <span class="description">( mensalmente )</span></div>
+                                                    <div class="col-md-offset-3 col-md-8">
+                                                        <input type="checkbox" class="toggle-checkbox" name="my-checkbox" checked>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <hr>
+                                                        <input type="button" class="btn btn-primary" value="Salvar alterações">
+                                                        <span></span>
+                                                        <input type="reset" class="btn btn-default" value="Cancelar">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="app-footer">
+        <div class="wrapper">
+            <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2016, JobStat.
+        </div>
+    </footer>
+    <div>
+        <!-- Javascript Libs -->
+        <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../bower_components/Chart.js/Chart.js"></script>
+        <script type="text/javascript" src="../../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+        <script type="text/javascript" src="../../bower_components/matchHeight/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="../../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../../bower_components/datatables/media/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
+        <!-- Javascript -->
+        <script type="text/javascript" src="../../js/app.js"></script>
+        <!-- Javascript -->
+</body>
+
+</html>
