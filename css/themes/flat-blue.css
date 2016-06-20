@@ -2,7 +2,8 @@
   background-color: #F9F9F9;
   /* small screen */ }
   .flat-blue a {
-    color: #363c46; }
+    color: #363c46;
+    margin-left: 5px; }
   .flat-blue a:hover {
     color: #09486b; }
   .flat-blue .app-footer {

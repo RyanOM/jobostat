@@ -620,6 +620,8 @@ body.login-page {
     text-align: right;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
+  body.login-page .btn-social:hover {
+    color: white; }
 
 @media (max-width: 768px) {
   body.login-page .login-form .login-header {
@@ -1206,6 +1208,34 @@ body.login-page {
   font-weight: 300;
   line-height: 1;
   letter-spacing: -1px; }
+
+/* Social Footer
+------------------------- */
+.social:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2); }
+
+.social {
+  -webkit-transform: scale(1);
+  /* Browser Variations: */
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s; }
+
+#social-fb:hover {
+  color: #3B5998; }
+
+#social-tw:hover {
+  color: #4099FF; }
+
+#social-gp:hover {
+  color: #d34836; }
+
+#social-em:hover {
+  color: #f39c12; }
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
