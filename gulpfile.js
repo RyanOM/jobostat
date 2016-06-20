@@ -52,7 +52,6 @@ gulp.task('build', function(cb) {
     gulp.src("./img/**/*").pipe(gulp.dest('./dist/img'));
 
     gulp.src(js_lib).pipe(gulp.dest('./dist/lib/js'));
-    gulp.src(acejs_lib).pipe(gulp.dest('./dist/lib/js/ace'));
     gulp.src(css_lib).pipe(gulp.dest('./dist/lib/css'));
     gulp.src(fonts_lib).pipe(gulp.dest('./dist/lib/fonts'));
 });

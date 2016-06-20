@@ -7,10 +7,11 @@ Pode encontrar o site aqui: [http://ryanom.github.io/jobstat](http://ryanom.gith
 
 
 Baixar repositorio:
-git clone .....
+git clone https://github.com/RyanOM/jobstat.git
 
 
-cd jobStat
+cd jobstat
 
 Baixar dependencias
+npm install --save-dev gulp
 bower install
