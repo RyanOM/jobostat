@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JobStat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/select2.min.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/themes/flat-blue.css">
+</head>
+
+<body class="flat-blue">
+<div class="app-container">
+    <div class="row content-container">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-expand-toggle">
+                        <i class="fa fa-bars icon"></i>
+                    </button>
+                    <ol class="breadcrumb navbar-breadcrumb">
+                        <li>Meu Perfil</li>
+                        <li class="active">Bob Jones</li>
+                    </ol>
+                    <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                        <i class="fa fa-th icon"></i>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                        <i class="fa fa-times icon"></i>
+                    </button>
+                    <li class="dropdown profile">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bob Jones <span class="caret"></span></a>
+                        <ul class="dropdown-menu animated fadeInDown">
+                            <li class="profile-img">
+                                <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                            </li>
+                            <li>
+                                <div class="profile-info">
+                                    <h4 class="username">Bob Jones</h4>
+                                    <p>bob_jones@email.com</p>
+                                    <div class="btn-group margin-bottom-2x" role="group">
+                                        <button type="button" class="btn btn-default"><a href="user_profile.html"><i class="fa fa-user"></i> Perfil</a></button>
+                                        <button type="button" class="btn btn-default"><a href="home.html"><i class="fa fa-sign-out"></i> Logout</a></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="side-menu sidebar-inverse">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="side-menu-container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="home.html">
+                            <div class="icon fa fa-line-chart"></div>
+                            <div class="title">JobStat</div>
+                        </a>
+                        <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-times icon"></i>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="dashboard.html">
+                                <span class="icon fa fa-tachometer"></span><span class="title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="topskills.html">
+                                <span class="icon fa fa-trophy"></span><span class="title">Top Competências</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="user_profile.html">
+                                <span class="icon fa fa fa-user"></span><span class="title">Meu Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="home.html">
+                                <span class="icon fa fa fa-sign-out"></span><span class="title">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <div class="side-body">
+                <div class="page-title">
+                    <span class="title">Meu Perfil</span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="card">
+                            <div class="card-header">
+
+                                <div class="card-title">
+                                    <div class="title">Editar meu perfil</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <!-- left column -->
+                                        <div class="col-md-3">
+                                            <div class="text-center">
+                                                <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="avatar" alt="avatar" style="max-height: 300px;overflow: hidden;">
+                                                <h6>Mudar foto de perfil</h6>
+
+                                                <input type="file" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <!-- edit form column -->
+                                        <div class="col-md-9 personal-info">
+                                            <div class="alert alert-success alert-dismissable">
+                                                <a class="panel-close close" data-dismiss="alert">×</a>
+                                                <i class="fa fa-check"></i>
+                                                Suas alterações foram salvas com sucesso.
+                                            </div>
+                                            <div class="alert alert-danger alert-dismissable">
+                                                <a class="panel-close close" data-dismiss="alert">×</a>
+                                                <i class="fa fa-times"></i>
+                                                Erros foram encontrados. Por favor, corrigi-los.
+                                            </div>
+                                            <h3>Meus dados pessoais</h3>
+
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Nome:</label>
+                                                    <div class="col-lg-8">
+                                                        <input class="form-control" type="text" value="Bob">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Sobrenome:</label>
+                                                    <div class="col-lg-8">
+                                                        <input class="form-control" type="text" value="Jones">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-3 control-label">Email:</label>
+                                                    <div class="col-lg-8">
+                                                        <input class="form-control" type="text" value="bob_jones@email.com">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Linkedin:</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="text" value="http://linkedin.com/bobjones">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Minhas Competências:</label>
+                                                    <div class="col-md-8">
+                                                        <select class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
+                                                            <option value="Python" selected>Python</option>
+                                                            <option value="Java">Java</option>
+                                                            <option value="C++">C++</option>
+                                                            <option value="C#">C#</option>
+                                                            <option value="Ruby">Ruby</option>
+                                                            <option value="Javascript" selected>Javascript</option>
+                                                            <option value="PHP">PHP</option>
+                                                            <option value="C">C</option>
+                                                            <option value="Go">Go</option>
+                                                            <option value="Perl">Perl</option>
+                                                            <option value="Scala" selected>Scala</option>
+                                                            <option value="Haskel">Haskel</option>
+                                                            <option value="Bash">Bash</option>
+                                                            <option value="R">R</option>
+                                                            <option value="Clojure">Clojure</option>
+                                                            <option value="Swift">Swift</option>
+                                                            <option value=".NET">.NET</option>
+                                                            <option value="Lua">Lua</option>
+                                                            <option value="Delphi">Delphi</option>
+                                                            <option value="Cobol">Cobol</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Senha:</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="password" value="11111122333">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Repetir Senha:</label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="password" value="11111122333">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="sub-title col-md-offset-3 col-md-8">Aceito receber  nosso newsletter <span class="description">( mensalmente )</span></div>
+                                                    <div class="col-md-offset-3 col-md-8">
+                                                        <input type="checkbox" class="toggle-checkbox" name="my-checkbox" checked>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label"></label>
+                                                    <div class="col-md-8">
+                                                        <hr>
+                                                        <input type="button" class="btn btn-primary" value="Salvar alterações">
+                                                        <span></span>
+                                                        <input type="reset" class="btn btn-default" value="Cancelar">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="app-footer">
+        <div class="wrapper">
+            <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2016, JobStat.
+        </div>
+    </footer>
+    </div>
+        <!-- Javascript Libs -->
+        <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
+
+        <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
+        <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
+        <!-- Javascript -->
+        <script type="text/javascript" src="../../js/app.js"></script>
+        <!-- Javascript -->
+
+        <!-- Select2 competencias -->
+        <script type="text/javascript">
+            $(".js-example-basic-multiple").select2();
+        </script>
+</body>
+
+</html>
