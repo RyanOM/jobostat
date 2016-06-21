@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JobStat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/css/select2.min.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/themes/flat-blue.css">
+</head>
+
+<body class="flat-blue">
+    <div class="app-container">
+        <div class="row content-container">
+            <nav class="navbar navbar-inverse navbar-fixed-top navbar-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-expand-toggle">
+                            <i class="fa fa-bars icon"></i>
+                        </button>
+                        <ol class="breadcrumb navbar-breadcrumb">
+                            <li>Top Competências</li>
+                            <li class="active">Programação</li>
+                        </ol>
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-th icon"></i>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-times icon"></i>
+                        </button>
+                        <li class="dropdown profile">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bob Jones <span class="caret"></span></a>
+                            <ul class="dropdown-menu animated fadeInDown">
+                                <li class="profile-img">
+                                    <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                                </li>
+                                <li>
+                                    <div class="profile-info">
+                                        <h4 class="username">Bob Jones</h4>
+                                        <p>bob_jones@email.com</p>
+                                        <div class="btn-group margin-bottom-2x" role="group">
+                                            <button type="button" class="btn btn-default"><a href="user_profile.html"><i class="fa fa-user"></i> Perfil</a></button>
+                                            <button type="button" class="btn btn-default"><a href="home.html"><i class="fa fa-sign-out"></i> Logout</a></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="side-menu sidebar-inverse">
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="side-menu-container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="home.html">
+                                <div class="icon fa fa-line-chart"></div>
+                                <div class="title">JobStat</div>
+                            </a>
+                            <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                                <i class="fa fa-times icon"></i>
+                            </button>
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="dashboard.html">
+                                    <span class="icon fa fa-tachometer"></span><span class="title">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="topskills.html">
+                                    <span class="icon fa fa-trophy"></span><span class="title">Top Competências</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="user_profile.html">
+                                    <span class="icon fa fa fa-user"></span><span class="title">Meu Perfil</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="home.html">
+                                    <span class="icon fa fa fa-sign-out"></span><span class="title">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+            </div>
+            <!-- Main Content -->
+            <div class="container-fluid">
+                <div class="side-body">
+                    <div class="page-title">
+                        <span class="title">Programação</span>
+                        <div class="description">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="card">
+                                <div class="card-header">
+
+                                    <div class="card-title">
+                                    <div class="title">Linguagens de programação</div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <table class="datatable table table-striped" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Competência</th>
+                                                <th>Vagas 2012</th>
+                                                <th>Vagas 2013</th>
+                                                <th>Vagas 2014</th>
+                                                <th>Vagas 2015</th>
+                                                <th>Media Salarial Mensal</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Competência</th>
+                                                <th>Vagas 2012</th>
+                                                <th>Vagas 2013</th>
+                                                <th>Vagas 2014</th>
+                                                <th>Vagas 2015</th>
+                                                <th>Media Salarial Mensal</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                        <tr>
+                                            <td>Python</td>
+                                            <td>4210</td>
+                                            <td>5032</td>
+                                            <td>4014</td>
+                                            <td>4851</td>
+                                            <td>R$4700</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Java</td>
+                                            <td>6232</td>
+                                            <td>7485</td>
+                                            <td>4624</td>
+                                            <td>5644</td>
+                                            <td>R$4400</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C++</td>
+                                            <td>3860</td>
+                                            <td>4929</td>
+                                            <td>4424</td>
+                                            <td>3630</td>
+                                            <td>R$5500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C#</td>
+                                            <td>5809</td>
+                                            <td>4391</td>
+                                            <td>5156</td>
+                                            <td>4920</td>
+                                            <td>R$6200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ruby</td>
+                                            <td>5116</td>
+                                            <td>6109</td>
+                                            <td>5480</td>
+                                            <td>4593</td>
+                                            <td>R$3800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Javascript</td>
+                                            <td>4884</td>
+                                            <td>4631</td>
+                                            <td>4158</td>
+                                            <td>5097</td>
+                                            <td>R$3500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PHP</td>
+                                            <td>4118</td>
+                                            <td>4052</td>
+                                            <td>4532</td>
+                                            <td>3582</td>
+                                            <td>R$5700</td>
+                                        </tr>
+                                        <tr>
+                                            <td>C</td>
+                                            <td>6310</td>
+                                            <td>6399</td>
+                                            <td>5353</td>
+                                            <td>6164</td>
+                                            <td>R$4100</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Go</td>
+                                            <td>5801</td>
+                                            <td>5678</td>
+                                            <td>5463</td>
+                                            <td>5875</td>
+                                            <td>R$6000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Perl</td>
+                                            <td>3660</td>
+                                            <td>4945</td>
+                                            <td>5455</td>
+                                            <td>4258</td>
+                                            <td>R$4200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Scala</td>
+                                            <td>5356</td>
+                                            <td>4676</td>
+                                            <td>4806</td>
+                                            <td>5083</td>
+                                            <td>R$3900</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Haskel</td>
+                                            <td>4084</td>
+                                            <td>5407</td>
+                                            <td>4105</td>
+                                            <td>4112</td>
+                                            <td>R$4300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bash</td>
+                                            <td>2614</td>
+                                            <td>6997</td>
+                                            <td>5359</td>
+                                            <td>4671</td>
+                                            <td>R$4900</td>
+                                        </tr>
+                                        <tr>
+                                            <td>R</td>
+                                            <td>6854</td>
+                                            <td>4776</td>
+                                            <td>6396</td>
+                                            <td>5119</td>
+                                            <td>R$3700</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Clojure</td>
+                                            <td>4355</td>
+                                            <td>3656</td>
+                                            <td>5491</td>
+                                            <td>5898</td>
+                                            <td>R$4500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Swift</td>
+                                            <td>5394</td>
+                                            <td>5170</td>
+                                            <td>5471</td>
+                                            <td>4121</td>
+                                            <td>R$6200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>.NET</td>
+                                            <td>4010</td>
+                                            <td>4941</td>
+                                            <td>3796</td>
+                                            <td>5371</td>
+                                            <td>R$5000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lua</td>
+                                            <td>5649</td>
+                                            <td>5643</td>
+                                            <td>5082</td>
+                                            <td>5433</td>
+                                            <td>R$4600</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Delphi</td>
+                                            <td>4347</td>
+                                            <td>5005</td>
+                                            <td>5690</td>
+                                            <td>3927</td>
+                                            <td>R$4200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cobol</td>
+                                            <td>4567</td>
+                                            <td>5826</td>
+                                            <td>4325</td>
+                                            <td>5976</td>
+                                            <td>R$4600</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            <div class="wrapper">
+                <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2016, JobStat.
+            </div>
+        </footer>
+    <div>
+    <!-- Javascript Libs -->
+    <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/Chart.js"></script>
+    <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
+
+    <script type="text/javascript" src="../../lib/js/jquery.matchHeight.js"></script>
+    <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="../../js/app.js"></script>
+</body>
+
+</html>

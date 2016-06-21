@@ -61,7 +61,7 @@
     },
     "Chart.js": {
       "main": [
-        "Chart.min.js"
+        "Chart.js"
       ]
     },
     "select2": {
@@ -83,7 +83,7 @@
     "c3": {
       "main": [
         "c3.css",
-        "c3.js"
+        "c3.min.js"
       ]
     }
   }
