@@ -1,7 +1,7 @@
 # JobStat
 
 Protótipo da plataforma JobStat: Inteligência do mercado de trabalho
-Live example at: [http://ryanom.github.io/jobostat/index.html](http://ryanom.github.io/jobostat/index.html)
+Live example at: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobstat/index.html)
 
 ## Tecnologias 
 1. **Bower** para gerenciar as dependências do projeto
