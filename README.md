@@ -11,7 +11,8 @@ Live example at: [http://ryanom.github.io/jobstat/index.html](http://ryanom.gith
 5. **Font-awesome** para os icones
 6. **C3.js, Chart.js & D3.js** para os graficos
 7. **DataTable** para as tabelas dinamicas
-8. **GitHub Pages** para hospedar o site  
+8. **Select2.js** para as select dinamico
+9. **GitHub Pages** para hospedar o site  
 
 ## Instalação
 
