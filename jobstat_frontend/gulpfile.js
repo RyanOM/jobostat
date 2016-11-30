@@ -29,7 +29,8 @@ gulp.task('build', function(cb) {
       .pipe(replace('bower_components/jquery.easing/js/jquery.easing.min.js', 'lib/js/jquery.easing.js'))
       .pipe(replace('bower_components/d3/d3.min.js', 'lib/js/d3.js'))
       .pipe(replace('bower_components/c3/c3.css', 'lib/css/c3.css'))
-      .pipe(replace('bower_components/c3/c3.min.js', 'lib/js/c3.min.js'))  
+      .pipe(replace('bower_components/c3/c3.min.js', 'lib/js/c3.min.js'))
+      .pipe(replace('bower_components/requirejs/require.js', 'lib/js/require.js'))
       .pipe(gulp.dest('./dist/html'));
 
     // lib

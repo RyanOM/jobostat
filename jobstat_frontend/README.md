@@ -3,7 +3,7 @@
 Protótipo da plataforma JobStat: Inteligência do mercado de trabalho
 Live example at: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobstat/index.html)
 
-## Tecnologias
+## Tecnologias 
 1. **Bower** para gerenciar as dependências do projeto
 2. **Gulp.js** para automatizar tarefas do deploy final e compilar **Sass**
 3. **Bootstrap** framework FrontEnd para site responsivo

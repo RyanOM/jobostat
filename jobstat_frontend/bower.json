@@ -13,7 +13,8 @@
     "checkbox3": "~0.1.1",
     "bootstrap-social": "latest",
     "jquery.easing": "1.3",
-    "c3": "latest"
+    "c3": "latest",
+    "requirejs": "latest"
   },
   "private": true,
   "overrides": {
@@ -84,6 +85,11 @@
       "main": [
         "c3.css",
         "c3.min.js"
+      ]
+    },
+    "requirejs": {
+      "main": [
+        "require.js"
       ]
     }
   }
