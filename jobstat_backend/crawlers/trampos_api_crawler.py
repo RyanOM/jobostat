@@ -19,7 +19,7 @@ def get_api_data(url):
 
 def save_data(data_json, job_id, error_counter):
     file_name = "%s-%s.json" % (JOB_PLATFORM, job_id)
-    save_path = '../crawled_data/trampos_json/%s' % file_name
+    save_path = SAVE_PATH + '/%s' % file_name
 
     if not os.path.isfile(save_path):
         with io.open(save_path, 'w', encoding='utf-8') as f:
@@ -48,7 +48,7 @@ def check_or_create_save_folder(folder_path):
 
 
 def get_latest_job_id():
-    data = get_api_data('http://trampos.co/api/v2/opportunities')
+    data = get_api_data(API_URL % '')
     highest_id = 0
 
     for opportunity in data['opportunities']:
