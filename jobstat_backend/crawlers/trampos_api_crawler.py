@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 import urllib2
 import json
 import os
 import io
 
-START_ID = 129140
+from common import check_or_create_save_folder
+
 JOB_PLATFORM = "trampos"
 API_URL = 'http://trampos.co/api/v2/opportunities/%s'
 SAVE_PATH = '../crawled_data/%s' % JOB_PLATFORM
@@ -39,12 +41,6 @@ def crawl_api(api_url, job_id, error_counter):
         return error_counter - 1
     else:
         return save_data(data, job_id, error_counter)
-
-
-def check_or_create_save_folder(folder_path):
-    if not os.path.exists(folder_path):
-        os.makedirs(folder_path)
-        print "Created folder for saved results: %s" % folder_path
 
 
 def get_latest_job_id():
