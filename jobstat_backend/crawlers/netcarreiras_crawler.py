@@ -17,7 +17,7 @@ SAVE_PATH = '../crawled_data/%s' % JOB_PLATFORM
 LATEST_JOBS_URL = 'http://www.netcarreiras.com.br/vagas.html'
 
 # Quits after encountering X offers that aren't available or already saved
-ERROR_COUNTER = 10
+ERROR_COUNTER = 200
 
 
 def check_job_page(job_id, page_html, error_counter):
@@ -59,6 +59,7 @@ def get_latest_job_id(browser):
             return int(first_job_id)
         except:
             continue
+
     print "\nWasn't able to retrieve most recent job id"
     return 0
 
@@ -67,6 +68,7 @@ def main():
     check_or_create_save_folder(SAVE_PATH)
     browser = webdriver.PhantomJS(executable_path=PHANTOMJS_PATH)
     job_id = get_latest_job_id(browser)
+    print("[+] The bot is starting!")
     error_counter = ERROR_COUNTER
 
     while job_id > 0 and error_counter > 0:

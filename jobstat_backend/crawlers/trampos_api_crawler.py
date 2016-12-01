@@ -58,8 +58,9 @@ def get_latest_job_id():
 def main():
     check_or_create_save_folder(SAVE_PATH)
     job_id = get_latest_job_id()
-
+    print("[+] The bot is starting!")
     error_counter = ERROR_COUNTER
+
     while job_id > 0 and error_counter > 0:
         error_counter = crawl_api(API_URL, job_id, error_counter)
         job_id -= 1
