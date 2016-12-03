@@ -4,7 +4,7 @@ import re
 
 from common import clean_text, save_json_file, check_or_create_save_folder
 
-job_platform = 'netcarreiras'
+job_platform = 'ceviu'
 JOB_FOLDER = "../crawled_data/%s" % job_platform
 SAVE_FILE_PATH = "../normalized_data/%s" % job_platform
 
@@ -15,11 +15,12 @@ def main():
 
     check_or_create_save_folder(SAVE_FILE_PATH)
 
-    # List all scraped files related to NetCarreiras
+    # List all scraped files related to Ceviu
     for html_file_path in os.listdir(JOB_FOLDER):
 
         # Parse only HTML files
         if html_file_path.endswith(".html"):
+
             job_id = re.findall(r'\d+', html_file_path)[0]
             json_file_name = "%s-%s.json" % (job_platform, job_id)
             save_path = "%s/%s" % (SAVE_FILE_PATH, json_file_name)
@@ -29,24 +30,27 @@ def main():
                     htmlfile = open(JOB_FOLDER+"/"+html_file_path)
                     soup = BeautifulSoup(htmlfile.read())
 
-                    date = soup.find('div', class_="profile").contents[3].text
-                    date = clean_text(date)
+                    job_info = soup.find("p", class_="codigo-data-vaga").text.strip()
+                    date = job_info.rsplit('Data: ', 1)[1].strip()
 
-                    location = soup.find('div', {'id': "location"}).text
+                    location = soup.find('div', class_="localizacao-vaga").text
                     location = clean_text(location)
-                    city = re.search('(.*) -', location, re.IGNORECASE).group(1)
-                    state = re.search('- (.*) \(', location, re.IGNORECASE).group(1)
+                    city = re.search('Localizacao (.*)/', location, re.IGNORECASE).group(1)
+                    state = re.search('/(.*)', location, re.IGNORECASE).group(1)
 
-                    job_title = soup.find("h1").text
+                    job_title = soup.find("h2", class_="titulo-vaga").text
                     job_title = clean_text(job_title)
 
                     company = None
-                    if soup.find_all('a', href=re.compile('^vagas-na-(.*)')):
-                        company = soup.find_all('a', href=re.compile('^vagas-na-(.*)'))[0].text
+                    if soup.find('a', class_="nome-empresa"):
+                        company = soup.find('a', class_="nome-empresa").text
                         company = clean_text(company)
 
-                    job_description = soup.find('article').contents[11].text
+                    job_description = soup.find('div', class_='descricao-vaga').text
                     job_description = clean_text(job_description)
+                    job_description = re.sub("Descricao da vaga ", "", job_description)
+                    job_description = re.sub("Vaga Patrocinada ", "", job_description)
+
 
                     data = {
                         'date': date,
@@ -63,7 +67,9 @@ def main():
 
                     save_json_file(save_path, data)
 
-                # Log errors to a text file
+
+                    # Log errors to a text file
+
                 except Exception as e:
                     target = open(ERROR_LOG_FILE, "a")
                     error_details = ""
