@@ -24,9 +24,10 @@ def main():
             job_id = re.findall(r'\d+', html_file_path)[0]
             json_file_name = "%s-%s.json" % (job_platform, job_id)
             save_path = "%s/%s" % (SAVE_FILE_PATH, json_file_name)
+
+            # Check if file hasn't already been parsed
             if not os.path.isfile(save_path):
                 try:
-
                     htmlfile = open(JOB_FOLDER+"/"+html_file_path)
                     soup = BeautifulSoup(htmlfile.read())
 
@@ -67,9 +68,7 @@ def main():
 
                     save_json_file(save_path, data)
 
-
-                    # Log errors to a text file
-
+                # Log errors to a text file
                 except Exception as e:
                     target = open(ERROR_LOG_FILE, "a")
                     error_details = ""

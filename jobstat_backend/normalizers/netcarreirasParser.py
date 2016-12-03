@@ -20,13 +20,15 @@ def main():
 
         # Parse only HTML files
         if html_file_path.endswith(".html"):
+
             job_id = re.findall(r'\d+', html_file_path)[0]
             json_file_name = "%s-%s.json" % (job_platform, job_id)
             save_path = "%s/%s" % (SAVE_FILE_PATH, json_file_name)
+
+            # Check if file hasn't already been parsed
             if not os.path.isfile(save_path):
                 try:
-
-                    htmlfile = open(JOB_FOLDER+"/"+html_file_path)
+                    htmlfile = open("%s/%s" % (JOB_FOLDER, html_file_path))
                     soup = BeautifulSoup(htmlfile.read())
 
                     date = soup.find('div', class_="profile").contents[3].text

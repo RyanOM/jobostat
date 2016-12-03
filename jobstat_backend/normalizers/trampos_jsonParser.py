@@ -28,44 +28,47 @@ def main():
         # Parse only JSON files
         if json_file_path.endswith(".json"):
 
-            try:
-                job_id = re.findall(r'\d+', json_file_path)[0]
-                with open("%s/%s" % (JOB_FOLDER, json_file_path)) as json_data:
-                    job_data = json.load(json_data)['opportunity']
-                    data = {}
+            job_id = re.findall(r'\d+', json_file_path)[0]
+            json_file_name = "%s-%s.json" % (job_platform, job_id)
+            save_path = "%s/%s" % (SAVE_FILE_PATH, json_file_name)
 
-                    data['date'] = get_date(job_data['published_at'])
+            # Check if file hasn't already been parsed
+            if not os.path.isfile(save_path):
+                try:
+                    with open("%s/%s" % (JOB_FOLDER, json_file_path)) as json_data:
+                        job_data = json.load(json_data)['opportunity']
+                        data = {}
 
-                    if 'city' in job_data and 'state' in job_data:
-                        data['city'] = clean_text(job_data['city'])
-                        data['state'] = clean_text(job_data['state'])
-                    elif 'home_office' in job_data:
-                        data['home_office'] = True
+                        data['date'] = get_date(job_data['published_at'])
 
-                    data['job_title'] = clean_text(job_data['name'])
+                        if 'city' in job_data and 'state' in job_data:
+                            data['city'] = clean_text(job_data['city'])
+                            data['state'] = clean_text(job_data['state'])
+                        elif 'home_office' in job_data:
+                            data['home_office'] = True
 
-                    if 'company' in job_data and job_data['company']:
-                        data['company'] = clean_text(job_data['company']['name'])
+                        data['job_title'] = clean_text(job_data['name'])
 
-                    data['job_description'] = "%s %s %s" % (clean_text(job_data['description']), clean_text(job_data['prerequisite']), clean_text(job_data['desirable']))
+                        if 'company' in job_data and job_data['company']:
+                            data['company'] = clean_text(job_data['company']['name'])
 
-                    data['job_platform'] = job_platform
-                    data['job_platform_id'] = job_id
+                        data['job_description'] = "%s %s %s" % (clean_text(job_data['description']), clean_text(job_data['prerequisite']), clean_text(job_data['desirable']))
 
-                    json_file_name = "%s-%s.json" % (job_platform, job_id)
-                    save_path = "%s/%s" % (SAVE_FILE_PATH, json_file_name)
-                    save_json_file(save_path, data)
+                        data['job_platform'] = job_platform
+                        data['job_platform_id'] = job_id
 
-            # Log errors to a text file
-            except Exception as e:
-                target = open(ERROR_LOG_FILE,  "a")
-                error_details = ""
-                if job_id:
-                    error_details += "%s: " % job_id
-                    print(job_id)
-                print(e)
-                error_details += str(e)
-                target.write("%s\n" % error_details)
+                        save_json_file(save_path, data)
+
+                # Log errors to a text file
+                except Exception as e:
+                    target = open(ERROR_LOG_FILE,  "a")
+                    error_details = ""
+                    if job_id:
+                        error_details += "%s: " % job_id
+                        print(job_id)
+                    print(e)
+                    error_details += str(e)
+                    target.write("%s\n" % error_details)
 
 if __name__ == '__main__':
     main()
