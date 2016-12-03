@@ -1,19 +1,20 @@
 import os
 import io
 import json
-from collections import Counter, defaultdict
-
 import datetime
 
+from collections import Counter, defaultdict
+
 from skills import SKILLS, ALIASES
+
+RESULTS_FOLDER = "../analzed_data"
+NOW = datetime.datetime.now()
 
 # Set of all skills/subskills
 ALL_SKILLS = set(sum([
     [skill]+subskills
     for skill, subskills in SKILLS.items()
 ], []))
-
-NOW = datetime.datetime.now()
 
 
 def invert_skills(skills):
@@ -32,8 +33,10 @@ SUBSKILLS_TO_SKILLS = invert_skills(SKILLS)
 
 
 def normalize_word(word):
+
     # Nornalize to lowercase
     word = word.lower()
+
     # Remove trailing comas or dots
     word = word.rstrip('-.,;*()/\\')
     word = word.lstrip('-,;*()/\\')
@@ -49,13 +52,16 @@ def text_to_words(paragraph):
 
 
 def word_to_skills(word):
+
     # Not a skill
     if word not in ALL_SKILLS:
         return []
+
     # Is a subskill
     if word in SUBSKILLS_TO_SKILLS:
         parent_skill = SUBSKILLS_TO_SKILLS[word]
         return [word, parent_skill]
+
     # Is a parent skill / category
     return [word]
 
@@ -89,13 +95,14 @@ def skills(paragraph):
     return flatten(skills)
 
 ##
-# JSON stuff
+# JSON operations
 ##
 
 JSON_FOLDERS = [
     "../normalized_data/netcarreiras",
     "../normalized_data/apinfo",
     "../normalized_data/trampos",
+    "../normalized_data/ceviu"
 ]
 
 
@@ -114,15 +121,21 @@ def jobs():
 
 def save_data(skill_name, data_json):
     file_name = "%s.json" % skill_name
-    save_path = '../analzed_data/%s' % file_name
+    save_path = '%s/%s' % (RESULTS_FOLDER, file_name)
     with io.open(save_path, 'w', encoding='utf-8') as f:
         f.write(unicode(json.dumps(data_json, sort_keys=True, indent=4, ensure_ascii=False)))
         print'Created file: %s' % file_name
 
 
+def check_or_create_save_folder(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print "Created folder for parsed results: %s" % folder_path
+
 ##
 # Date functions
 ##
+
 
 # "09/06/2016" -> "06/2016"
 def job_month(job_date):
@@ -161,6 +174,7 @@ def print_counter(counter):
 
 
 def print_histogram(skill, histogram):
+
     # Sort histogram items
     sorted_items = sorted(histogram.items(), key=lambda e: e[0])
     print("# %s" % skill)
@@ -190,6 +204,7 @@ def skills_histograms():
 
 
 def main_all_histograms():
+    print("Compiling results ....")
     histograms = skills_histograms()
     for skill, histogram in histograms.items():
         print_histogram(skill, histogram)
@@ -206,6 +221,7 @@ def main_all_skills():
 
 
 def main():
+    check_or_create_save_folder(RESULTS_FOLDER)
     main_all_histograms()
 
 if __name__ == '__main__':
