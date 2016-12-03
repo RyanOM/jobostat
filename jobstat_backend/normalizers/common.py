@@ -21,3 +21,8 @@ def save_json_file(save_path, data):
         with io.open(save_path, 'w', encoding='utf-8') as f:
             f.write(unicode(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False)))
 
+
+def check_or_create_save_folder(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print "Created folder for parsed results: %s" % folder_path

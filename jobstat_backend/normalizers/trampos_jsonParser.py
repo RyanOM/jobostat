@@ -2,7 +2,7 @@ import os
 import re
 import json
 
-from common import clean_text, save_json_file
+from common import clean_text, save_json_file, check_or_create_save_folder
 
 job_platform = 'trampos'
 JOB_FOLDER = "../crawled_data/%s" % (job_platform + "_json")
@@ -19,6 +19,8 @@ def get_date(json_date):
 
 
 def main():
+
+    check_or_create_save_folder(SAVE_FILE_PATH)
 
     # List all scraped files related to Trampos
     for json_file_path in os.listdir(JOB_FOLDER):
