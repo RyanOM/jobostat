@@ -9,7 +9,7 @@ SKILLS = {
     '.net': ['c#', 'vb', 'asp'],
     'python': ['django', 'flask', 'web2py', 'plone', 'bottle', 'scrapy'],
     'ruby': ['rails', 'sinatra'],
-    'javascript': ['angularjs', 'nodejs', 'emberjs', 'backbonejs', 'reactjs', 'd3js', 'jquery', 'coffeescript', 'vuejs', 'typescript'],
+    'javascript': ['angularjs', 'nodejs', 'emberjs', 'backbonejs', 'reactjs', 'd3js', 'jquery', 'coffeescript', 'vuejs', 'typescript', 'highcharts'],
     'databases': ['sql', 'postgres', 'mysql', 'dba', 'mongodb', 'cassandra', 'windows server', 'firebase'],
     'cloud computing': ['aws', 'azure', 'heroku', 'bluemix', 'digital ocean'],
     'big data': ['hadoop', 'spark', 'hive'],
@@ -33,7 +33,7 @@ SKILLS = {
         'joomla'
         ],
     'oracle': ['plsql',],
-    'analytics': ['google analytics', 'adwords', 'seo', 'sem'],
+    'analytics': ['google analytics', 'adwords', 'seo', 'sem', 'excel'],
     'design': ['photoshop', 'illustrator', 'indesign', 'prestashop', 'sketch', 'flash'],
     'ibm': ['db2', 'websphere'],
     'agile': ['scrum', 'tdd', 'kanban'],
@@ -51,7 +51,13 @@ SKILLS = {
 }
 
 ALIASES = {
-    'nodejs': 'node.js',
+    'angular.js': 'angularjs',
+    'node.js': 'nodejs',
+    'ember.js': 'emberjs',
+    'backbone.js': 'backbonejs',
+    'react.js': 'reactjs',
+    'd3.js': 'dsjs',
+    'vue.js': 'vuejs',
     'dotnet': '.net',
     'ruby on rails': 'rails',
     'java script': 'javascript',
