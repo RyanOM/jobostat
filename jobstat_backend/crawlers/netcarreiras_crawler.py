@@ -17,13 +17,13 @@ SAVE_PATH = '../crawled_data/%s' % JOB_PLATFORM
 LATEST_JOBS_URL = 'http://www.netcarreiras.com.br/vagas.html'
 
 # Quits after encountering X offers that aren't available or already saved
-ERROR_COUNTER = 200
+ACCESS_LIMIT = 200
 
 
-def check_job_page(job_id, page_html, error_counter):
+def check_job_page(job_id, page_html, access_limit):
     if 'Erro 410' in page_html.text:
         print '410: %s' % job_id
-        error_counter -= 1
+        access_limit -= 1
     else:
         html = page_html.prettify("utf-8")
         file_name = "%s-%s.html" % (JOB_PLATFORM, job_id)
@@ -34,18 +34,18 @@ def check_job_page(job_id, page_html, error_counter):
                 print'Created file: %s' % file_name
         else:
             print'File already exists: %s' % file_name
-            error_counter -= 1
+            access_limit -= 1
 
-    return error_counter
+    return access_limit
 
 
-def get_job_opportunity(browser, job_id, error_counter):
+def get_job_opportunity(browser, job_id, access_limit):
     job_url = JOB_OFFER_URL % job_id
     browser.get(job_url)
     time.sleep(random.uniform(0.1, 0.3))
     page_html = BeautifulSoup(browser.page_source)
-    error_counter = check_job_page(job_id, page_html, error_counter)
-    return error_counter
+    access_limit = check_job_page(job_id, page_html, access_limit)
+    return access_limit
 
 
 def get_latest_job_id(browser):
@@ -69,13 +69,13 @@ def main():
     browser = webdriver.PhantomJS(executable_path=PHANTOMJS_PATH)
     job_id = get_latest_job_id(browser)
     print("[+] The bot is starting!")
-    error_counter = ERROR_COUNTER
+    access_limit = ACCESS_LIMIT
 
-    while job_id > 0 and error_counter > 0:
-        error_counter = get_job_opportunity(browser, job_id, error_counter)
+    while job_id > 0 and access_limit > 0:
+        access_limit = get_job_opportunity(browser, job_id, access_limit)
         job_id -= 1
 
-        if error_counter <= 0:
+        if access_limit <= 0:
             print "\nNo new jobs found. Exiting..."
 
 
