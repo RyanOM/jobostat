@@ -14,7 +14,8 @@
     "bootstrap-social": "latest",
     "jquery.easing": "1.3",
     "c3": "latest",
-    "requirejs": "latest"
+    "requirejs": "latest",
+    "highcharts-release": "latest"
   },
   "private": true,
   "overrides": {
@@ -90,6 +91,13 @@
     "requirejs": {
       "main": [
         "require.js"
+      ]
+    },
+    "highcharts-release": {
+      "main": [
+        "highcharts.js",
+        "highcharts-more.js",
+        "modules/exporting.src.js"
       ]
     }
   }

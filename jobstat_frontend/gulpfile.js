@@ -31,6 +31,8 @@ gulp.task('build', function(cb) {
       .pipe(replace('bower_components/c3/c3.css', 'lib/css/c3.css'))
       .pipe(replace('bower_components/c3/c3.min.js', 'lib/js/c3.min.js'))
       .pipe(replace('bower_components/requirejs/require.js', 'lib/js/require.js'))
+      .pipe(replace('bower_components/highcharts-release/highstock.js', 'lib/js/highstock.js'))
+      .pipe(replace('bower_components/highcharts-release/modules/exporting.js', 'lib/js/exporting.js'))
       .pipe(gulp.dest('./dist/html'));
 
     // lib

@@ -179,13 +179,13 @@
         <script type="text/javascript" src="../../bower_components/d3/d3.min.js"></script>
         <script type="text/javascript" src="../../bower_components/c3/c3.min.js"></script>
         <script type="text/javascript" src="../../bower_components/requirejs/require.js"></script>
+        <script type="text/javascript" src="../../bower_components/highcharts-release/highstock.js"></script>
+        <script type="text/javascript" src="../../bower_components/highcharts-release/modules/exporting.js"></script>
         <!-- Javascript -->
         <script type="text/javascript" src="../../js/app.js"></script>
     </div>
 
     <!-- HC test-->
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     <script>
         $(function () {
             $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/java.json', function (data) {
@@ -210,6 +210,7 @@
                     series: [{
                         name: data['skill_name'],
                         data: getJsonValues(data['data']),
+                        //data: getSkillPercentageFrequency('java'),
                         tooltip: {
                             //valueDecimals: 2
                         }
@@ -218,21 +219,60 @@
             });
         });
 
-            function getJsonValues(json) {
-                var res = [];
-                for (var key in json) {
+        function getTotalJobOffers() {
+            var totalJobOffersPerMonth;
+            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json", function(json){
+                var bruteData = json;
+
+
+                totalJobOffersPerMonth = json;
+            });
+            return totalJobOffersData;
+        }
+
+        function getJsonValues(json) {
+            var res = [];
+            for (var key in json) {
+                if(!key.includes("-")) {
                     res.push(json[key]);
                 }
-                return res;
             }
+            return res;
+        }
 
-            function getXAxisValues(json) {
-                var res = [];
-                for (var key in json) {
-                    res.push(key);
-                }
-                return res;
+        function getXAxisValues(json) {
+            var res = [];
+            for (var key in json) {
+                res.push(key);
             }
+            return res;
+        }
+
+        function getSkillPercentageFrequency() {
+            var allData;
+            var javaData;
+            $.when(
+                $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json", function(data) {
+                    allData = data['data'];
+                }),
+                $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json", function(data) {
+                    javaData = data['data'];
+                })
+            ).then(function() {
+
+                var results = [];
+                for (var key in javaData) {
+                  if(!key.includes("-")) {
+                    var nbOffersPerMonth = allData[key];
+                    var skillOffersPerMonth = javaData[key];
+                    var percentage = skillOffersPerMonth / nbOffersPerMonth * 100;
+                    results.push(percentage);
+                  }
+                }
+                console.log(results);
+                return results;
+            });
+        }
 
     </script>
 
@@ -251,7 +291,7 @@
                 nbData.push(data["data"][key]);
                 xlabels.push(key);
             }
-            console.log(nbData);
+            //console.log(nbData);
             skillArray = nbData;
         });
 
