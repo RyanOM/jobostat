@@ -188,7 +188,7 @@
     <!-- HC test-->
     <script>
         $(function () {
-            $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/java.json', function (data) {
+            $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json', function (data) {
 
                 // Create the chart
                 Highcharts.chart('hccontainer', {
@@ -209,8 +209,8 @@
 
                     series: [{
                         name: data['skill_name'],
-                        data: getJsonValues(data['data']),
-                        //data: getSkillPercentageFrequency('java'),
+                        //data: getJsonValues(data['data']),
+                        data: getSkillPercentageFrequency('java'),
                         tooltip: {
                             //valueDecimals: 2
                         }
@@ -218,17 +218,6 @@
                 });
             });
         });
-
-        function getTotalJobOffers() {
-            var totalJobOffersPerMonth;
-            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json", function(json){
-                var bruteData = json;
-
-
-                totalJobOffersPerMonth = json;
-            });
-            return totalJobOffersData;
-        }
 
         function getJsonValues(json) {
             var res = [];
@@ -269,7 +258,6 @@
                     results.push(percentage);
                   }
                 }
-                console.log(results);
                 return results;
             });
         }
