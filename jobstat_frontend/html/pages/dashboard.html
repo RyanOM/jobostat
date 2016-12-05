@@ -3,7 +3,7 @@
 
 <head>
     <title>JobStat</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/animate.css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/checkbox3/dist/checkbox3.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/datatables/media/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="../../bower_components/datatables/media/css/dataTables.bootstrap.css">
@@ -44,7 +45,8 @@
                         <i class="fa fa-times icon"></i>
                     </button>
                     <li class="dropdown profile">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bob Jones <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bob
+                            Jones <span class="caret"></span></a>
                         <ul class="dropdown-menu animated fadeInDown">
                             <li class="profile-img">
                                 <img src="../../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
@@ -54,8 +56,10 @@
                                     <h4 class="username">Bob Jones</h4>
                                     <p>bob_jones@email.com</p>
                                     <div class="btn-group margin-bottom-2x" role="group">
-                                        <button type="button" class="btn btn-default"><a href="user_profile.html"><i class="fa fa-user"></i> Perfil</a></button>
-                                        <button type="button" class="btn btn-default"><a href="home.html"><i class="fa fa-sign-out"></i> Logout</a></button>
+                                        <button type="button" class="btn btn-default"><a href="user_profile.html"><i
+                                                class="fa fa-user"></i> Perfil</a></button>
+                                        <button type="button" class="btn btn-default"><a href="home.html"><i
+                                                class="fa fa-sign-out"></i> Logout</a></button>
                                     </div>
                                 </div>
                             </li>
@@ -141,7 +145,7 @@
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                                 <div class="card primary">
                                     <div class="card-jumbotron no-padding" style="background: none !important;">
-                                        <div id="chart"  style="color: dimgrey"></div>
+                                        <div id="chart" style="color: dimgrey"></div>
                                     </div>
                                     <div class="card-body half-padding">
                                         <h4 class="no-margin font-weight-300 text-center">(Crescimento Relativo)</h4>
@@ -172,10 +176,13 @@
         <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
         <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../../bower_components/Chart.js/Chart.js"></script>
-        <script type="text/javascript" src="../../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+        <script type="text/javascript"
+                src="../../bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
         <script type="text/javascript" src="../../bower_components/matchHeight/jquery.matchHeight-min.js"></script>
-        <script type="text/javascript" src="../../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="../../bower_components/datatables/media/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript"
+                src="../../bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript"
+                src="../../bower_components/datatables/media/js/dataTables.bootstrap.min.js"></script>
         <script type="text/javascript" src="../../bower_components/select2/dist/js/select2.full.min.js"></script>
         <script type="text/javascript" src="../../bower_components/d3/d3.min.js"></script>
         <script type="text/javascript" src="../../bower_components/c3/c3.min.js"></script>
@@ -191,31 +198,34 @@
         $(function () {
             $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json', function (data) {
 
-                // Create the chart
-                Highcharts.chart('hccontainer', {
+                getSkillPercentageFrequency(function (results) {
 
-                    title: {
-                        text: 'AAPL Stock Price'
-                    },
+                    // Create the chart
+                    Highcharts.chart('hccontainer', {
 
-                    xAxis: {
-                        categories: getXAxisValues(data['data'])
-                    },
-
-                    yAxis: {
                         title: {
-                            text: 'Número de vagas'
-                        }
-                    },
+                            text: 'AAPL Stock Price'
+                        },
 
-                    series: [{
-                        name: data['skill_name'],
-                        //data: getJsonValues(data['data']),
-                        data: getSkillPercentageFrequency('java'),
-                        tooltip: {
-                            //valueDecimals: 2
-                        }
-                    }]
+                        xAxis: {
+                            categories: getXAxisValues(data['data'])
+                        },
+
+                        yAxis: {
+                            title: {
+                                text: 'Número de vagas'
+                            }
+                        },
+
+                        series: [{
+                            name: data['skill_name'],
+                            //data: getJsonValues(data['data']),
+                            data: results,
+                            tooltip: {
+                                valueDecimals: 2
+                            }
+                        }]
+                    });
                 });
             });
         });
@@ -223,7 +233,7 @@
         function getJsonValues(json) {
             var res = [];
             for (var key in json) {
-                if(!key.includes("-")) {
+                if (!key.includes("-")) {
                     res.push(json[key]);
                 }
             }
@@ -238,28 +248,30 @@
             return res;
         }
 
-        function getSkillPercentageFrequency() {
+        function getSkillPercentageFrequency(callback) {
             var allData;
             var javaData;
             $.when(
-                $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json", function(data) {
-                    allData = data['data'];
-                }),
-                $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json", function(data) {
-                    javaData = data['data'];
-                })
-            ).then(function() {
+                    $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json", function (data) {
+                        allData = data['data'];
+                    }),
+                    $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json", function (data) {
+                        javaData = data['data'];
+                    })
+            ).then(function () {
 
                 var results = [];
                 for (var key in javaData) {
-                  if(!key.includes("-")) {
-                    var nbOffersPerMonth = allData[key];
-                    var skillOffersPerMonth = javaData[key];
-                    var percentage = skillOffersPerMonth / nbOffersPerMonth * 100;
-                    results.push(percentage);
-                  }
+                    if (!key.includes("-")) {
+                        var nbOffersPerMonth = allData[key];
+                        var skillOffersPerMonth = javaData[key];
+                        var percentage = skillOffersPerMonth / nbOffersPerMonth * 100;
+                        results.push(percentage);
+                    }
                 }
-                return results;
+                console.log(getJsonValues(javaData));
+                console.log(results);
+                callback(results);
             });
         }
 
@@ -272,11 +284,11 @@
         var xlabels = [];
 
         //$.getJSON('./java.json', function(data) {
-        $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/java.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/java.json', function (data) {
             var nbData = [];
             nbData.push(data["skill_name"]);
 
-            for (var key in data["data"]){
+            for (var key in data["data"]) {
                 nbData.push(data["data"][key]);
                 xlabels.push(key);
             }
@@ -292,8 +304,8 @@
                 columns: [
                     //['Python', -36, -28, 21, 38, -25],
                     //['Java', -10, -39, 34, 46, 30],
-                        skillArray,
-                        skillArray
+                    skillArray,
+                    skillArray
                 ]
             },
             axis: {
@@ -353,7 +365,7 @@
             chart.load({
                 columns: [
                     arr[e.params.data.id],
-                        skillArray
+                    skillArray
                 ]
             });
         });
@@ -363,17 +375,17 @@
                 ids: e.params.data.id,
             });
         });
-        
-        
+
+
         function month_to_years(json_skill) {
             var pop = json_skill["data"];
             var year_dic = {};
 
-            for (var key in pop){
-                var year = key.substring(0,4);
+            for (var key in pop) {
+                var year = key.substring(0, 4);
                 var keyvalue = pop[key];
 
-                if(year in year_dic) {
+                if (year in year_dic) {
                     year_dic[year] = year_dic[year] + keyvalue;
                 } else {
                     year_dic[year] = keyvalue;
@@ -382,7 +394,6 @@
             return year_dic;
 
         }
-
 
 
     </script>
