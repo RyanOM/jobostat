@@ -10,7 +10,7 @@ SKILLS = {
     'python': ['django', 'flask', 'web2py', 'plone', 'bottle', 'scrapy'],
     'ruby': ['rails', 'sinatra'],
     'javascript': ['angularjs', 'nodejs', 'emberjs', 'backbonejs', 'reactjs', 'd3js', 'jquery', 'coffeescript', 'vuejs', 'typescript', 'highcharts'],
-    'databases': ['sql', 'postgres', 'mysql', 'dba', 'mongodb', 'cassandra', 'windows server', 'firebase'],
+    'databases': ['sql', 'postgres', 'mysql', 'dba', 'mongodb', 'cassandra', 'windows server', 'firebase', 'mariadb'],
     'cloud computing': ['aws', 'azure', 'heroku', 'bluemix', 'digital ocean'],
     'big data': ['hadoop', 'spark', 'hive'],
     'perl': [],
@@ -47,6 +47,7 @@ SKILLS = {
     'groovy': ['grails'],
     'lisp': [],
     'fortran': [],
+    'unity': []
 
 }
 
