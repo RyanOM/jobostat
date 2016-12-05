@@ -195,40 +195,69 @@
 
     <!-- HC test-->
     <script>
+
+        var chart;
+        var allOfferData;
+
         $(function () {
-            $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json', function (data) {
 
-                getSkillPercentageFrequency(function (results) {
+            $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json', function (jsonData) {
 
-                    // Create the chart
-                    Highcharts.chart('hccontainer', {
+                allOfferData = jsonData;
 
+                startChart()
+            });
+
+            function startChart() {
+
+                chart = Highcharts.chart('hccontainer', {
+
+                    title: {
+                        text: 'AAPL Stock Price'
+                    },
+
+                    xAxis: {
+                        categories: getXAxisValues(allOfferData['data'])
+                    },
+
+                    yAxis: {
                         title: {
-                            text: 'AAPL Stock Price'
-                        },
+                            text: '% de vagas'
+                        }
+                    },
 
-                        xAxis: {
-                            categories: getXAxisValues(data['data'])
-                        },
+                    tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b>%<br/>',
+                valueDecimals: 2,
+                split: true
+            },
 
-                        yAxis: {
-                            title: {
-                                text: 'Número de vagas'
-                            }
-                        },
+                    series: []
+                });
 
-                        series: [{
-                            name: data['skill_name'],
-                            //data: getJsonValues(data['data']),
-                            data: results,
-                            tooltip: {
-                                valueDecimals: 2
-                            }
-                        }]
-                    });
+                addSkillToChart('ios');
+                addSkillToChart('android');
+                addSkillToChart('ionic');
+                addSkillToChart('phonegap');
+                addSkillToChart('cordova');
+
+
+            }
+        });
+
+        function addSkillToChart(skillName) {
+
+            getSkillPercentageFrequency(skillName, function (result) {
+                chart.addSeries({
+                    name: skillName,
+                    data: result,
+                    tooltip: {
+                        valueDecimals: 2
+                    }
                 });
             });
-        });
+        }
+
 
         function getJsonValues(json) {
             var res = [];
@@ -248,29 +277,21 @@
             return res;
         }
 
-        function getSkillPercentageFrequency(callback) {
-            var allData;
-            var javaData;
-            $.when(
-                    $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json", function (data) {
-                        allData = data['data'];
-                    }),
-                    $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/java.json", function (data) {
-                        javaData = data['data'];
-                    })
-            ).then(function () {
+        function getSkillPercentageFrequency(skill, callback) {
+
+            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/" + skill + ".json", function (skillData) {
+
+                skillData = skillData['data'];
 
                 var results = [];
-                for (var key in javaData) {
+                for (var key in skillData) {
                     if (!key.includes("-")) {
-                        var nbOffersPerMonth = allData[key];
-                        var skillOffersPerMonth = javaData[key];
+                        var nbOffersPerMonth = allOfferData['data'][key];
+                        var skillOffersPerMonth = skillData[key];
                         var percentage = skillOffersPerMonth / nbOffersPerMonth * 100;
                         results.push(percentage);
                     }
                 }
-                console.log(getJsonValues(javaData));
-                console.log(results);
                 callback(results);
             });
         }
