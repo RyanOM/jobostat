@@ -34,7 +34,7 @@ SKILLS = {
         ],
     'oracle': ['plsql',],
     'analytics': ['google analytics', 'adwords', 'seo', 'sem', 'excel'],
-    'design': ['photoshop', 'illustrator', 'indesign', 'prestashop', 'sketch', 'flash'],
+    'design': ['photoshop', 'illustrator', 'indesign', 'sketch', 'flash', 'invision', 'marvel', 'html5'],
     'ibm': ['db2', 'websphere'],
     'agile': ['scrum', 'tdd', 'kanban'],
     'erlang': [],

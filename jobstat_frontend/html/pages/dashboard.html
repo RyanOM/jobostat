@@ -116,12 +116,12 @@
                         <div class="row">
                             <div class="col-sm-6 col-sm-offset-3">
                                 <select class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
-                                    <option value="Python" selected>Python</option>
+                                    <option value="Javascript" selected>Javascript</option>
                                     <option value="Java" selected>Java</option>
+                                    <option value="Python">Python</option>
                                     <option value="C++">C++</option>
                                     <option value="C#">C#</option>
                                     <option value="Ruby">Ruby</option>
-                                    <option value="Javascript">Javascript</option>
                                     <option value="PHP">PHP</option>
                                     <option value="C">C</option>
                                     <option value="Go">Go</option>
@@ -141,6 +141,7 @@
                                 <br>
                             </div>
                         </div>
+                        <!--
                         <div class="row">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                                 <div class="card primary">
@@ -154,6 +155,7 @@
                                 </div>
                             </div>
                         </div>
+                        -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                                 <div class="card primary">
@@ -213,7 +215,7 @@
                 chart = Highcharts.chart('hccontainer', {
 
                     title: {
-                        text: 'AAPL Stock Price'
+                        text: 'Ofertas de Emprego Publicadas'
                     },
 
                     xAxis: {
@@ -222,7 +224,7 @@
 
                     yAxis: {
                         title: {
-                            text: '% de vagas'
+                            text: 'Porcentagem de ofertas de emprego correspondentes (%)'
                         }
                     },
 
@@ -235,13 +237,9 @@
                     series: []
                 });
 
-                addSkillToChart('ios');
-                addSkillToChart('android');
-                addSkillToChart('ionic');
-                addSkillToChart('phonegap');
-                addSkillToChart('cordova');
-
-
+                // Add default skills to chart
+                addSkillToChart('javascript');
+                addSkillToChart('java');
             }
         });
 
@@ -296,10 +294,35 @@
             });
         }
 
+        /*
+            Chart Manipulation
+         */
+
+        var $eventSelect = $(".js-example-basic-multiple");
+
+        // Add selected skill to chart
+        $eventSelect.on("select2:select", function (e) {
+            var selectedSkill = String(e.params.data.id).toLowerCase();
+            addSkillToChart(selectedSkill);
+        });
+
+        // Remove unselected skill from chart
+        $eventSelect.on("select2:unselect", function (e) {
+            var unselectedSkill = String(e.params.data.id).toLowerCase();
+            var seriesLength = chart.series.length;
+            for(var i = seriesLength - 1; i > -1; i--) {
+                if(chart.series[i].name ==unselectedSkill) {
+                    chart.series[i].remove();
+                }
+            }
+        });
+
+
     </script>
 
     <!-- Generate Chart -->
     <script>
+        /*
 
         var skillArray = [];
         var xlabels = [];
@@ -416,7 +439,7 @@
 
         }
 
-
+    */
     </script>
 </div>
 </body>
