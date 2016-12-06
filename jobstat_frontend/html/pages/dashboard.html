@@ -118,24 +118,6 @@
                                 <select class="js-example-basic-multiple" multiple="multiple" style="width: 100%">
                                     <option value="Javascript" selected>Javascript</option>
                                     <option value="Java" selected>Java</option>
-                                    <option value="Python">Python</option>
-                                    <option value="C++">C++</option>
-                                    <option value="C#">C#</option>
-                                    <option value="Ruby">Ruby</option>
-                                    <option value="PHP">PHP</option>
-                                    <option value="C">C</option>
-                                    <option value="Go">Go</option>
-                                    <option value="Perl">Perl</option>
-                                    <option value="Scala">Scala</option>
-                                    <option value="Haskel">Haskel</option>
-                                    <option value="Bash">Bash</option>
-                                    <option value="R">R</option>
-                                    <option value="Clojure">Clojure</option>
-                                    <option value="Swift">Swift</option>
-                                    <option value=".NET">.NET</option>
-                                    <option value="Lua">Lua</option>
-                                    <option value="Delphi">Delphi</option>
-                                    <option value="Cobol">Cobol</option>
                                 </select>
                                 <br>
                                 <br>
@@ -197,6 +179,27 @@
 
     <!-- HC test-->
     <script>
+        var files = $.getJSON('https://api.github.com/repos/ryanOM/jobstat/contents/jobstat_backend/analzed_data', function (jsonData) {
+
+            var data = [];
+            for (var i = 0; i < jsonData.length; i++) {
+                var obj = jsonData[i];
+                if (obj['name'] != "all.json") {
+                    var skillName = obj['name'].split('.json')[0];
+                    var d = {
+                        'id': skillName,
+                        'text': skillName[0].toUpperCase() + skillName.substr(1)
+                    };
+                    data.push(d);
+                }
+            }
+            $(".js-example-basic-multiple").select2({
+                data: data
+            });
+        });
+
+
+
 
         var chart;
         var allOfferData;
