@@ -10,8 +10,13 @@ SKILLS = {
     'python': ['django', 'flask', 'web2py', 'plone', 'bottle', 'scrapy'],
     'ruby': ['rails', 'sinatra'],
     'javascript': ['angularjs', 'nodejs', 'emberjs', 'backbonejs', 'reactjs', 'd3js', 'jquery', 'coffeescript', 'vuejs', 'typescript', 'highcharts'],
-    'databases': ['sql', 'postgres', 'mysql', 'dba', 'mongodb', 'cassandra', 'windows server', 'firebase', 'mariadb'],
-    'cloud computing': ['aws', 'azure', 'heroku', 'bluemix', 'digital ocean'],
+    'sql': ['postgres', 'mysql'],
+    'dba': [],
+    'mongodb': [],
+    'cassandra': [],
+    'firebase': [],
+    'mariadb': [],
+    'cloud computing': ['aws', 'azure', 'heroku', 'bluemix'],
     'big data': ['hadoop', 'spark', 'hive'],
     'perl': [],
     'scala': ['spark', 'play framework', 'akka'],
@@ -33,7 +38,7 @@ SKILLS = {
         'joomla'
         ],
     'oracle': ['plsql',],
-    'analytics': ['google analytics', 'adwords', 'seo', 'sem', 'excel'],
+    'analytics': ['adwords', 'seo', 'sem', 'excel'],
     'design': ['photoshop', 'illustrator', 'indesign', 'sketch', 'flash', 'invision', 'marvel', 'html5'],
     'ibm': ['db2', 'websphere'],
     'agile': ['scrum', 'tdd', 'kanban'],
@@ -47,7 +52,10 @@ SKILLS = {
     'groovy': ['grails'],
     'lisp': [],
     'fortran': [],
-    'unity': []
+    'unity': [],
+    'jenkins': [],
+    'ansible': [],
+    'docker': []
 
 }
 
@@ -64,5 +72,6 @@ ALIASES = {
     'java script': 'javascript',
     'postgres': 'postgresql',
     'mongo': 'mongodb',
-    'golang': 'go'
+    'golang': 'go',
+    'delphi': 'delphi7'
 }
