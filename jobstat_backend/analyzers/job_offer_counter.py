@@ -4,7 +4,7 @@ import json
 import datetime
 
 
-RESULTS_FOLDER = "../analzed_data"
+RESULTS_FOLDER = "../analyzed_data"
 NOW = datetime.datetime.now()
 
 JSON_FOLDERS = [

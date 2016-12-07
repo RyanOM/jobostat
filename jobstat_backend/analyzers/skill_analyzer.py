@@ -7,7 +7,7 @@ from collections import Counter, defaultdict
 
 from skills import SKILLS, ALIASES
 
-RESULTS_FOLDER = "../analzed_data"
+RESULTS_FOLDER = "../analyzed_data"
 NOW = datetime.datetime.now()
 
 # Set of all skills/subskills
