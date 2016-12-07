@@ -96,6 +96,7 @@
     "highcharts-release": {
       "main": [
         "highcharts.js",
+        "highstock.js",
         "highcharts-more.js",
         "modules/exporting.src.js"
       ]
