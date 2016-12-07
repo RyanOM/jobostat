@@ -58,7 +58,10 @@
         "media/css/jquery.dataTables.min.css",
         "media/css/dataTables.bootstrap.css",
         "media/js/jquery.dataTables.min.js",
-        "media/js/dataTables.bootstrap.min.js"
+        "media/js/dataTables.bootstrap.min.js",
+        "media/images/sort_both.png",
+        "media/images/sort_desc.png",
+        "media/images/sort_asc.png"
       ]
     },
     "Chart.js": {
