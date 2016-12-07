@@ -181,13 +181,13 @@
                 "order": [[ 5, "desc" ]]
             });
 
-        $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/all.json', function (jsonData) {
+        $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analyzed_data/all.json', function (jsonData) {
             allOfferData = convertDataMonthToYear(jsonData['data']);
         });
 
         $(document).ready(function() {
 
-            var files = $.getJSON('https://api.github.com/repos/ryanOM/jobstat/contents/jobstat_backend/analzed_data', function (jsonData) {
+            var files = $.getJSON('https://api.github.com/repos/ryanOM/jobstat/contents/jobstat_backend/analyzed_data', function (jsonData) {
 
                 for (var i = 0; i < jsonData.length; i++) {
                     var obj = jsonData[i];
@@ -217,7 +217,7 @@
         function getYearlySkillPercentageFrequency(skill, callback) {
 
             // Get contents and parse convert symbols such as # -> %23
-            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/" + skill.replace('#', '%23') + ".json", function (skillData) {
+            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analyzed_data/" + skill.replace('#', '%23') + ".json", function (skillData) {
 
               skillData = skillData['data'];
               var skillDataPerYear = convertDataMonthToYear(skillData);
