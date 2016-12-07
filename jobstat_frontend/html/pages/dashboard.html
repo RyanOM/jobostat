@@ -123,21 +123,6 @@
                                 <br>
                             </div>
                         </div>
-                        <!--
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                                <div class="card primary">
-                                    <div class="card-jumbotron no-padding" style="background: none !important;">
-                                        <div id="chart" style="color: dimgrey"></div>
-                                    </div>
-                                    <div class="card-body half-padding">
-                                        <h4 class="no-margin font-weight-300 text-center">(Crescimento Relativo)</h4>
-                                        <div class="clear-both"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-10 col-sm-offset-1">
                                 <div class="card primary">
@@ -177,8 +162,11 @@
         <script type="text/javascript" src="../../js/app.js"></script>
     </div>
 
-    <!-- HC test-->
+    <!-- Generate HighChart-->
     <script>
+        var chart;
+        var allOfferData;
+
         var files = $.getJSON('https://api.github.com/repos/ryanOM/jobstat/contents/jobstat_backend/analzed_data', function (jsonData) {
 
             var data = [];
@@ -197,12 +185,6 @@
                 data: data
             });
         });
-
-
-
-
-        var chart;
-        var allOfferData;
 
         $(function () {
 
@@ -280,7 +262,7 @@
 
         function getSkillPercentageFrequency(skill, callback) {
 
-            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/" + skill + ".json", function (skillData) {
+            $.getJSON("https://raw.githubusercontent.com/RyanOM/jobstat/master/jobstat_backend/analzed_data/" + skill.replace('#', '%23') + ".json", function (skillData) {
 
                 skillData = skillData['data'];
 
@@ -298,7 +280,7 @@
         }
 
         /*
-            Chart Manipulation
+            Chart Series Manipulation
          */
 
         var $eventSelect = $(".js-example-basic-multiple");
@@ -321,128 +303,6 @@
         });
 
 
-    </script>
-
-    <!-- Generate Chart -->
-    <script>
-        /*
-
-        var skillArray = [];
-        var xlabels = [];
-
-        //$.getJSON('./java.json', function(data) {
-        $.getJSON('https://raw.githubusercontent.com/RyanOM/jobstat/master/java.json', function (data) {
-            var nbData = [];
-            nbData.push(data["skill_name"]);
-
-            for (var key in data["data"]) {
-                nbData.push(data["data"][key]);
-                xlabels.push(key);
-            }
-            //console.log(nbData);
-            skillArray = nbData;
-        });
-
-
-        var chart = c3.generate({
-            bindto: '#chart',
-            title: 'Skills',
-            data: {
-                columns: [
-                    //['Python', -36, -28, 21, 38, -25],
-                    //['Java', -10, -39, 34, 46, 30],
-                    skillArray,
-                    skillArray
-                ]
-            },
-            axis: {
-                x: {
-                    type: 'categories',
-                    //categories: ['2012', '2013', '2014', '2015', '2016']
-                    categories: xlabels
-                },
-                y: {
-                    //max: 40,
-                    //min: -40
-
-                }
-            },
-            grid: {
-                y: {
-                    lines: [
-                        {value: 0}
-                    ]
-                }
-            },
-            subchart: {
-                show: true
-            }
-        });
-
-        var arr = [];
-        arr = {
-            "Python": ['Python', -36, -28, 21, 38, -25],
-            "Java": ['Java', -10, -39, 34, 46, 30],
-            "C++": ['C++', 3, -32, 11, 33, -21],
-            "C#": ['C#', -21, 22, -14, 44, 30],
-            "Ruby": ['Ruby', -17, 41, 5, -9, -30],
-            "Javascript": ['Javascript', -30, 5, 34, -44, 45],
-            "PHP": ['PHP', 42, 28, 47, -33, -27],
-            "C": ['C', 48, 36, 31, -18, 35],
-            "Go": ['Go', -46, -35, 34, 9, 14],
-            "Perl": ['Perl', -34, -22, 31, 45, 18],
-            "Scala": ['Scala', 7, 12, 48, 35, 28],
-            "Haskel": ['Haskel', -7, -24, -1, 23, 2],
-            "Bash": ['Bash', 35, -34, 40, 41, -1],
-            "R": ['R', -19, 47, -35, 13, -7],
-            "Clojure": ['Clojure', -18, -27, 34, -29, -47],
-            "Swift": ['Swift', 3, 40, -10, 3, 13],
-            ".NET": ['.NET', 11, 33, 40, -26, 45],
-            "Lua": ['Lua', 50, -27, 40, 4, -19],
-            "Delphi": ['Delphi', -18, -36, -30, 18, 20],
-            "Cobol": ['Cobol', -27, 43, 12, 16, 3],
-        };
-
-
-        var $eventLog = $(".js-event-log");
-        var $eventSelect = $(".js-example-basic-multiple");
-
-        $eventSelect.on("select2:select", function (e) {
-            console.log(e.params.data.id);
-            chart.load({
-                columns: [
-                    arr[e.params.data.id],
-                    skillArray
-                ]
-            });
-        });
-
-        $eventSelect.on("select2:unselect", function (e) {
-            chart.unload({
-                ids: e.params.data.id,
-            });
-        });
-
-
-        function month_to_years(json_skill) {
-            var pop = json_skill["data"];
-            var year_dic = {};
-
-            for (var key in pop) {
-                var year = key.substring(0, 4);
-                var keyvalue = pop[key];
-
-                if (year in year_dic) {
-                    year_dic[year] = year_dic[year] + keyvalue;
-                } else {
-                    year_dic[year] = keyvalue;
-                }
-            }
-            return year_dic;
-
-        }
-
-    */
     </script>
 </div>
 </body>
