@@ -173,7 +173,6 @@
             var data = [];
             for (var i = 0; i < jsonData.length; i++) {
                 var obj = jsonData[i];
-                console.log(obj['name']);
                 if (obj['name'] != "all.json" && obj['name'] != "java.json" && obj['name'] != "javascript.json") {
                     var skillName = obj['name'].split('.json')[0];
                     var d = {
