@@ -142,7 +142,11 @@ SKILLS = {
 
 # Find skills that have multiple used names rails -> ruby on rails
 ALIASES = {
+    'ruby on rails': 'rails',
+    'mongo': 'mongodb',
     'angular.js': 'angularjs',
+    'angular': 'angularjs',
+    'node': 'nodejs',
     'node.js': 'nodejs',
     'ember.js': 'emberjs',
     'backbone.js': 'backbonejs',
@@ -150,10 +154,8 @@ ALIASES = {
     'd3.js': 'dsjs',
     'vue.js': 'vuejs',
     'dotnet': '.net',
-    'ruby on rails': 'rails',
     'java script': 'javascript',
     'postgres': 'postgresql',
-    'mongo': 'mongodb',
     'golang': 'go',
     'delphi': 'delphi7'
 }
