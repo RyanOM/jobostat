@@ -57,26 +57,29 @@ pip install -r requirements.txt
 
 Executar os crawlers
 ```
-python crawlers/apinfo_page_crawler.py
-python crawlers/ceviu_crawler.py
-python crawlers/netcarreiras_crawler.py
-python crawlers/trampos_api_crawler.py	
+cd crawlers
+python apinfo_page_crawler.py
+python ceviu_crawler.py
+python netcarreiras_crawler.py
+python trampos_api_crawler.py	
 ```
 Os dados raspados serão salvos na pasta: crawled_data
 
 Executar os normalizers
 ```
-python normalizers/apinfoParser.py
-python normalizers/ceviuParser.py
-python normalizers/netcarreirasParser.py
-python normalizers/trampos_jsonParser.py
+cd normalizers
+python apinfoParser.py
+python ceviuParser.py
+python netcarreirasParser.py
+python trampos_jsonParser.py
 ```
 Os dados normalizadas serão salvos na pasta: normalized_data
 
 Executar os analyzers
 ```
-python analyzers/job_offer_counter.py
-python analyzers/skill_analyzer.py	
+cd analyzers
+python job_offer_counter.py
+python skill_analyzer.py	
 ```
 Os resultados serão salvos na pasta: analyzed_data
 
