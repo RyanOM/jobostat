@@ -6,7 +6,7 @@ Demo: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobst
 ## Tecnologias BackEnd
 1. **pip** para gerenciar as dependências BackEnd do projeto
 2. **Python** para os scripts
-3. **PhantomJS e Selenium** para simular um navigador web
+3. **PhantomJS e Selenium** para simular um navegador web
 4. **BeautifulSoup** para a extração de dados
 5. **GitHub** para hospedar os resultados JSON
 
@@ -25,26 +25,26 @@ Demo: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobst
 
 ## Instalação (somente sistemas Unix/OSX)
 
-Verifique que sua sistema tem pip, python, npm e virtualenv instalados.
+Verifique que seu sistema tem pip, python, npm e virtualenv instalados.
 
-Baixe o repositório git
+Baixe o repositório git:
 ```
 $ git clone https://github.com/RyanOM/jobstat.git
 ```
 
-Acesse a pasta jobstat
+Acesse a pasta jobstat:
 ```
 $ cd jobstat
 ```
 
 ## Passo a Passo BackEnd
 
-Acesse a pasta jobstat_backend
+Acesse a pasta jobstat_backend:
 ```
 $ cd jobstat_backend
 ```
 
-Cria um virtualenv para a instalação das dependências:
+Crie um virtualenv para a instalação das dependências:
 ```
 $ virtualenv jobstatenv
 $ source jobstatenv/bin/activate
@@ -55,7 +55,7 @@ Instale as dependências:
 (jobstatenv) ~$ pip install -r requirements.txt
 ```
 
-Executar os crawlers
+Execute os crawlers:
 ```
 (jobstatenv) ~$ cd crawlers
 (jobstatenv) ~$ python apinfo_page_crawler.py
@@ -65,7 +65,7 @@ Executar os crawlers
 ```
 Os dados raspados serão salvos na pasta: crawled_data
 
-Executar os normalizers
+Execute os normalizers:
 ```
 (jobstatenv) ~$ cd normalizers
 (jobstatenv) ~$ python apinfoParser.py
@@ -75,7 +75,7 @@ Executar os normalizers
 ```
 Os dados normalizadas serão salvos na pasta: normalized_data
 
-Executar os analyzers
+Execute os analyzers:
 ```
 (jobstatenv) ~$ cd analyzers
 (jobstatenv) ~$ python job_offer_counter.py
@@ -98,7 +98,7 @@ $ bower install
 ```
 
 
-Executa o projeto
+Execute o projeto
 ```
 $ gulp dev
 ```
