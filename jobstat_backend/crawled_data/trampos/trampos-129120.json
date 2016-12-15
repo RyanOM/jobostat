@@ -1,0 +1,64 @@
+{
+    "opportunity": {
+        "address": "Rua Anacetuba, 71, Itaim Bibi - São Paulo, SP", 
+        "already_applied": false, 
+        "applies_count": 94, 
+        "apply_method": 2, 
+        "badges": [], 
+        "bitly_url": "http://trmp.co/2gyixnD", 
+        "category_name": "Design", 
+        "category_slug": "design", 
+        "city": "São Paulo", 
+        "comments": "", 
+        "company": {
+            "cover": "//cdn3.trampos.co/assets/missing-company-cover-76dac5ed65c40c1b008470868abc7803.png", 
+            "description": "Somos uma Boutique de Marketing & Publicidade. Fazemos um pouco de tudo. Chamamos a responsabilidade (Planejamento Estratégico) e entregamos resultados (Execução). \r\n Queremos mostrar aos clientes da All Set Comunicação nossa forma #cool #creative de enxergar o mundo. Valorizamos o design e a criatividade. Valorizamos a ação! Curtimos a jornada, nos divertimos e superamos as expectativas dos clientes.  #changingyourday !", 
+            "employees": "11-50 funcionários", 
+            "id": 111411, 
+            "logo": "//cdn1.trampos.co/companies/logos/111411/7f44840be2e6728106a35c90246e110d6a91c9e9/nocrop/AllSet_logo1-01.jpg", 
+            "name": "All Set Comunicação", 
+            "networks": [
+                {
+                    "icon": "fa fa-facebook-square", 
+                    "id": 10341, 
+                    "name": "Facebook", 
+                    "url": "http://www.facebook.com/https://www.facebook.com/pages/All-Set/924667240939675?fref=ts"
+                }
+            ], 
+            "slug": "allset", 
+            "url": "http://trampos.co/allset"
+        }, 
+        "description": "A Dolce Gusto tem uma demanda grande de peças de email marketing na semana. Usam este canal para conversão e contato constante com sua base de clientes e prospects. ", 
+        "desirable": "", 
+        "email_share_url": "http://trampos.co/oportunidades/129120-web-designer/share/email", 
+        "email_shares": "2", 
+        "facebook_share_url": "http://www.facebook.com/share.php?u=http://trmp.co/2gyixnD", 
+        "facebook_shares": "0", 
+        "hide_ads": false, 
+        "highlight": false, 
+        "id": 129120, 
+        "name": "Web Designer (e-mail mkt)", 
+        "opportunity_questions": [
+            {
+                "body": "Já trabalhou / criou email mkt para e-commerces? De grande porte? Quais?", 
+                "id": 2514, 
+                "required": true
+            }
+        ], 
+        "other_info": "Você ficará alocada(o) na sede da Nestlé na Av Chucri Zaidan 3x na semana, e 2x na All Set (Itaim Bibi).", 
+        "perks": "Vale-transporte\r\nVale-refeição", 
+        "prerequisite": "Pacote Adobe\r\nConhecimento em programação HTML\r\nExperiência em criação e programação de peças de email marketing", 
+        "published_at": "2016-11-29T16:40:05.000-02:00", 
+        "quantity": 1, 
+        "regime": "CLT", 
+        "salary": "NÃO DIVULGADA", 
+        "state": "SP", 
+        "tweet_count": "0", 
+        "twitter_share_url": "http://twitter.com/share?text=Oportunidade de Web Designer (e-mail mkt) @ All Set Comunicação (via @trampos)&url=http://trmp.co/2gyixnD", 
+        "type_name": "Emprego", 
+        "type_slug": "emprego", 
+        "url": "http://trmp.co/2gyixnD", 
+        "whatsapp_share_url": "http://trampos.co/oportunidades/129120-web-designer/share/whatsapp", 
+        "whatsapp_shares": "1"
+    }
+}
