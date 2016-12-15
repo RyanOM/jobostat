@@ -94,7 +94,7 @@ Os resultados serão salvos na pasta: `jobstat_backend/analyzed_data`
 
 ## FrontEnd Local - Passo-a-Passo
 
-Acesse a pasta `jobstata/jobstat_frontend`:
+Acesse a pasta `jobstat/jobstat_frontend`:
 ```
 $ cd jobstat_frontend
 ```
