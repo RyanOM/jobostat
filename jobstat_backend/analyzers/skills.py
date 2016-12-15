@@ -1,31 +1,91 @@
-# https://www.chooseyourboss.com/skills?s=python
+"""
+    List of skills that will be analyzed in the skill_analyzer.py script
+"""
 
 
-# skill -> subskill
+# skill -> [subskill, subskill, ....]
 SKILLS = {
-    'java': ['spring', 'hibernate', 'jsf', 'jboss', 'jee'],
+    'java': [
+        'spring',
+        'hibernate',
+        'jsf',
+        'jboss',
+        'jee'
+    ],
+    'javascript': [
+        'angularjs',
+        'nodejs',
+        'emberjs',
+        'backbonejs',
+        'reactjs',
+        'd3js',
+        'jquery',
+        'coffeescript',
+        'vuejs',
+        'typescript',
+        'highcharts'
+    ],
     'cobol': [],
     'c++': [],
-    '.net': ['c#', 'vb', 'asp'],
-    'python': ['django', 'flask', 'web2py', 'plone', 'bottle', 'scrapy'],
-    'ruby': ['rails', 'sinatra'],
-    'javascript': ['angularjs', 'nodejs', 'emberjs', 'backbonejs', 'reactjs', 'd3js', 'jquery', 'coffeescript', 'vuejs', 'typescript', 'highcharts'],
-    'sql': ['postgres', 'mysql'],
+    '.net': [
+        'c#',
+        'vb',
+        'asp'
+    ],
+    'python': [
+        'django',
+        'flask',
+        'web2py',
+        'plone',
+        'bottle',
+        'scrapy'
+    ],
+    'ruby': [
+        'rails',
+        'sinatra'
+    ],
+    'sql': [
+        'postgres',
+        'mysql'
+    ],
     'dba': [],
     'mongodb': [],
     'cassandra': [],
     'firebase': [],
     'mariadb': [],
-    'cloud computing': ['aws', 'azure', 'heroku', 'bluemix'],
-    'big data': ['hadoop', 'spark', 'hive'],
+    'cloud computing': [
+        'aws',
+        'azure',
+        'heroku',
+        'bluemix'
+    ],
+    'big data': [
+        'hadoop',
+        'spark',
+        'hive'
+    ],
     'perl': [],
-    'scala': ['spark', 'play framework', 'akka'],
+    'scala': [
+        'spark',
+        'play framework',
+        'akka'
+    ],
     'clojure': [],
     'delphi': ['pascal'],
     'android': [],
     'ios': ['swift'],
-    'mobile': ['ionic', 'phonegap', 'cordova', 'android', 'ios'],
-    'linux': ['ubuntu', 'debian', 'redhat'],
+    'mobile': [
+        'ionic',
+        'phonegap',
+        'cordova',
+        'android',
+        'ios'
+    ],
+    'linux': [
+        'ubuntu',
+        'debian',
+        'redhat'
+    ],
     'php': [
         'wordpress',
         'magento',
@@ -36,12 +96,33 @@ SKILLS = {
         'codeigniter',
         'zend',
         'joomla'
-        ],
-    'oracle': ['plsql',],
-    'analytics': ['adwords', 'seo', 'sem', 'excel'],
-    'design': ['photoshop', 'illustrator', 'indesign', 'sketch', 'flash', 'invision', 'marvel', 'html5'],
-    'ibm': ['db2', 'websphere'],
-    'agile': ['scrum', 'tdd', 'kanban'],
+    ],
+    'oracle': ['plsql'],
+    'analytics': [
+        'adwords',
+        'seo',
+        'sem',
+        'excel'
+    ],
+    'design': [
+        'photoshop',
+        'illustrator',
+        'indesign',
+        'sketch',
+        'flash',
+        'invision',
+        'marvel',
+        'html5'
+    ],
+    'ibm': [
+        'db2',
+        'websphere'
+    ],
+    'agile': [
+        'scrum',
+        'tdd',
+        'kanban'
+    ],
     'erlang': [],
     'go': [],
     'rust': [],
@@ -59,8 +140,13 @@ SKILLS = {
 
 }
 
+# Find skills that have multiple used names rails -> ruby on rails
 ALIASES = {
+    'ruby on rails': 'rails',
+    'mongo': 'mongodb',
     'angular.js': 'angularjs',
+    'angular': 'angularjs',
+    'node': 'nodejs',
     'node.js': 'nodejs',
     'ember.js': 'emberjs',
     'backbone.js': 'backbonejs',
@@ -68,10 +154,8 @@ ALIASES = {
     'd3.js': 'dsjs',
     'vue.js': 'vuejs',
     'dotnet': '.net',
-    'ruby on rails': 'rails',
     'java script': 'javascript',
     'postgres': 'postgresql',
-    'mongo': 'mongodb',
     'golang': 'go',
     'delphi': 'delphi7'
 }

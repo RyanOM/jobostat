@@ -32,7 +32,7 @@ gulp.task('build', function(cb) {
       .pipe(replace('bower_components/c3/c3.min.js', 'lib/js/c3.min.js'))
       .pipe(replace('bower_components/requirejs/require.js', 'lib/js/require.js'))
       .pipe(replace('bower_components/highcharts-release/highstock.js', 'lib/js/highstock.js'))
-      .pipe(replace('bower_components/highcharts-release/modules/exporting.js', 'lib/js/exporting.js'))
+      .pipe(replace('bower_components/highcharts-release/modules/exporting.js', 'lib/js/exporting.src.js'))
       .pipe(gulp.dest('./dist/html'));
 
     // lib
@@ -40,6 +40,7 @@ gulp.task('build', function(cb) {
     js_lib = [];
     css_lib = [];
     fonts_lib = [];
+    images_lib = [];
     for(var i = 0; i < lib.length; i++) {
       if(lib[i].indexOf('.js') > -1) {
         js_lib.push(lib[i])
@@ -47,6 +48,8 @@ gulp.task('build', function(cb) {
         css_lib.push(lib[i])
       } else if(lib[i].indexOf('/fonts/') > -1) {
         fonts_lib.push(lib[i])
+      } else if(lib[i].indexOf('/images/') > -1) {
+        images_lib.push(lib[i])
       }
     }
 
@@ -57,6 +60,7 @@ gulp.task('build', function(cb) {
     gulp.src(js_lib).pipe(gulp.dest('./dist/lib/js'));
     gulp.src(css_lib).pipe(gulp.dest('./dist/lib/css'));
     gulp.src(fonts_lib).pipe(gulp.dest('./dist/lib/fonts'));
+    gulp.src(images_lib).pipe(gulp.dest('./dist/lib/images'));
 });
 
 
