@@ -1,6 +1,7 @@
 # JobStat
 
 Protótipo da plataforma JobStat: Inteligência do mercado de trabalho de TI
+
 Versão para Teste: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobstat/index.html)
 
 ## Tecnologias BackEnd
@@ -47,6 +48,7 @@ $ cd jobstat_backend
 ```
 
 Estrutura `jobstat_backend`
+
 ![alt text](https://s28.postimg.org/eiq89uzcd/Screen_Shot_2016_12_15_at_4_23_20_PM.png "Logo Title Text 1")
 
 
@@ -90,7 +92,7 @@ Para executar os *analyzers* a partir da pasta `jobstat_backend`:
 Os resultados serão salvos na pasta: `jobstat_backend/analyzed_data`
 
 
-## FrontEnd - Passo-a-Passo
+## FrontEnd Local - Passo-a-Passo
 
 Acesse a pasta `jobstata/jobstat_frontend`:
 ```
