@@ -5,7 +5,7 @@ import json
 from common import clean_text, save_json_file, check_or_create_save_folder
 
 job_platform = 'trampos'
-JOB_FOLDER = "../crawled_data/%s" % (job_platform + "_json")
+JOB_FOLDER = "../crawled_data/%s" % job_platform
 SAVE_FILE_PATH = "../normalized_data/%s" % job_platform
 
 ERROR_LOG_FILE = "../normalized_data/%s_error_log.txt" % job_platform
