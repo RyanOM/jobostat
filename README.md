@@ -51,7 +51,7 @@ $ cd jobstat_backend
 
 Structure for `jobstat_backend`
 
-![alt text](https://s28.postimg.org/eiq89uzcd/Screen_Shot_2016_12_15_at_4_23_20_PM.png "Logo Title Text 1")
+![BackEnd Structure](https://raw.githubusercontent.com/RyanOM/jobstat/master/structure.png "BackEnd Structure")
 
 
 Create a virtualenv and activate it. Then install all the dependencies:
