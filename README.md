@@ -1,6 +1,9 @@
 # JobStat
 
-Prototype of the JobStat platform: IT job market intelligence
+Prototype of the JobStat platform: IT job market intelligence.
+The goal of this project was to analyse and observe the relevant skills of the Brazilian IT job market.
+
+Observation: This is a prototype of the platform to show how it could work and many things would need to be improved to have this working in a production environment.
 
 Demo: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobstat/index.html)
 
