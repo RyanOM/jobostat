@@ -27,43 +27,42 @@ Demo: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobst
 ## Installation requirements
 
 System: Unix/OSX
+Verify if your system has [npm](https://nodejs.org/en/download/), [pip](https://pip.pypa.io/en/stable/installing/) e [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) installed.
 
-Verifique que seu sistema tem [npm](https://nodejs.org/en/download/), [pip](https://pip.pypa.io/en/stable/installing/) e [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) instalados.
-
-Após instalar todas as dependências, baixe o projeto:
+After installing the dependencies, download the project:
 ```
 $ git clone https://github.com/RyanOM/jobstat.git
 ```
 
-Acesse a pasta do projeto jobstat:
+Access the folder of the `Jobstat` project:
 ```
 $ cd jobstat
 ```
 
-## BackEnd - Passo-a-Passo
+## Backend: Step by Step
 
-Acesse a pasta `jobstat_backend`:
+Access the folder `jobstat_backend`:
 ```
 $ cd jobstat_backend
 ```
 
-Estrutura `jobstat_backend`
+Structure for `jobstat_backend`
 
 ![alt text](https://s28.postimg.org/eiq89uzcd/Screen_Shot_2016_12_15_at_4_23_20_PM.png "Logo Title Text 1")
 
 
-Crie uma virtualenv e ative-a para que, na sequência, todas as dependências serem instaladas:
+Create a virtualenv and activate it. Then install all the dependencies:
 ```
 $ virtualenv jobstatenv
 $ source jobstatenv/bin/activate
 ```
 
-Instale as dependências:
+Install the dependencies:
 ```
 (jobstatenv) ~$ pip install -r requirements.txt
 ```
 
-Para executar os *crawlers* a partir da pasta `jobstat_backend`:
+Run the *crawlers* from the `jobstat_backend` folder:
 ```
 (jobstatenv) ~$ cd crawlers
 (jobstatenv) ~$ python apinfo_page_crawler.py
@@ -71,9 +70,9 @@ Para executar os *crawlers* a partir da pasta `jobstat_backend`:
 (jobstatenv) ~$ python netcarreiras_crawler.py
 (jobstatenv) ~$ python trampos_api_crawler.py	
 ```
-Os dados raspados serão salvos na pasta: `jobstat_backend/crawled_data`
+The scaped data will be saved in the folder: `jobstat_backend/crawled_data`
 
-Para executar os *normalizers* a partir da pasta `jobstat_backend`:
+Run the *normalizers* from the `jobstat_backend` folder: 
 ```
 (jobstatenv) ~$ cd normalizers
 (jobstatenv) ~$ python apinfoParser.py
@@ -81,40 +80,40 @@ Para executar os *normalizers* a partir da pasta `jobstat_backend`:
 (jobstatenv) ~$ python netcarreirasParser.py
 (jobstatenv) ~$ python trampos_jsonParser.py
 ```
-Os dados normalizadas serão salvos na pasta: `jobstat_backend/normalized_data`
+The normalized data will be saved in the folder: `jobstat_backend/normalized_data`
 
-Para executar os *analyzers* a partir da pasta `jobstat_backend`:
+Run the *analyzers* from the `jobstat_backend` folder: 
 ```
 (jobstatenv) ~$ cd analyzers
 (jobstatenv) ~$ python job_offer_counter.py
 (jobstatenv) ~$ python skill_analyzer.py	
 ```
-Os resultados serão salvos na pasta: `jobstat_backend/analyzed_data`
+The results will be saved in the folder: `jobstat_backend/analyzed_data`
 
 
-## FrontEnd Local - Passo-a-Passo
+## Local FrontEnd: Step by step
 
-Acesse a pasta `jobstata/jobstat_frontend`:
+Access the folder `jobstata/jobstat_frontend`:
 ```
 $ cd jobstat_frontend
 ```
 
-Baixe todas as dependências do portal:
+Install all the dependencies of the platform:
 ```
 $ npm install --save-dev gulp
 $ bower install
 ```
 
 
-Execute o projeto:
+Run the project:
 ```
 $ gulp dev
 ```
 
-Se por acaso ocorrer, durante o processo ocorrer algum erro, execute o seguinte comando:
+If any error occures, try running the following command:
 ```
 $ npm cache clean
 $ npm install
 ```
 
-E finalmente, acesse o portal no seguinte endereço local: [http://localhost:3000/html/pages/home.html](http://localhost:3000/html/pages/home.html)
+Finally access the portal going to the following link: [http://localhost:3000/html/pages/home.html](http://localhost:3000/html/pages/home.html)
