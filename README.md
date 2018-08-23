@@ -1,32 +1,32 @@
 # JobStat
 
-Protótipo da plataforma JobStat: Inteligência do mercado de trabalho de TI
+Prototype of the JobStat platform: IT job market intelligence
 
-Versão para Teste: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobstat/index.html)
+Demo: [http://ryanom.github.io/jobstat/index.html](http://ryanom.github.io/jobstat/index.html)
 
-## Tecnologias BackEnd
-1. **pip** para gerenciar as dependências BackEnd do projeto
-2. **Python** para os scripts
-3. **PhantomJS e Selenium** para simular um navegador web
-4. **BeautifulSoup** para a extração de dados
-5. **GitHub** para hospedar os resultados JSON
+## BackEnd Technologies
+1. **pip** to manage Python dependencies
+2. **Python** for the scripts
+3. **PhantomJS e Selenium** to mimic a web browser
+4. **BeautifulSoup** to extract data from the html files
+5. **GitHub** to host the JSON results
 
 
 
-## Tecnologias FrontEnd
-1. **Bower** para gerenciar as dependências FrontEnd do projeto
-2. **Gulp.js** para automatizar tarefas de deploy do Portal e compilar arquivos **Sass**, **JS** e etc
-3. **Bootstrap** framework FrontEnd para site responsivo
-4. **Sass** para facilitar a estilização do site
-5. **Font-awesome** ícones interpretados como fonte
-6. **HighCharts.js** para visualização das vagas em formato de gráfico
-7. **DataTable** para as tabelas dinâmicas
-8. **Select2.js** para os campos de seleção dinâmica
-9. **GitHub Pages** para hospedar arquivos do projeto
+## FrontEnd Technologies
+1. **Bower** to manage dependencies
+2. **Gulp.js** to aumotimate the tasks of deployment and compile **Sass**, **JS**, etc
+3. **Bootstrap** responsive web framework for the website
+4. **Sass** for styling
+5. **Font-awesome** for icons.
+6. **HighCharts.js** for data visualisation
+7. **DataTable** for dynamic tables
+8. **Select2.js** dynamic select input fields
+9. **GitHub Pages** to host the website
 
-## Requisitos de Instalação
+## Installation requirements
 
-Sistema Unix/OSX
+System: Unix/OSX
 
 Verifique que seu sistema tem [npm](https://nodejs.org/en/download/), [pip](https://pip.pypa.io/en/stable/installing/) e [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) instalados.
 
